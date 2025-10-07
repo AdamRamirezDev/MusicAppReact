@@ -1,6 +1,6 @@
 import './App.css'
 import './styles/styles.css'
-import PrincipalPage from './components/principalPage.tsx/principalPage'
+import PrincipalPage from './components/pages/Home/principalPage'
 
 
 function App() {
