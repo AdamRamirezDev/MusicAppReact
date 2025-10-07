@@ -1,7 +1,12 @@
 import { useState } from "react";
 
+interface Track {
+    id: number;
+    title: string;
+}
+
 export const BusquedaDeezer = () => {
-    const [tracks, setTracks] = useState([]);
+    const [tracks, setTracks] = useState<Track[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 

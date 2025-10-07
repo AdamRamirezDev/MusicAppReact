@@ -7,9 +7,12 @@ export default function Busqueda() {
     const [query, setQuery] = React.useState("");
     const { tracks, loading, error, searchSongs } = BusquedaDeezer();
 
-    const handleKeyDown = (e: React.FormEvent) => {
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+      if(e.key === "Enter"){
         e.preventDefault();
         searchSongs(query);
+      }  
+
     }
 
     return (
