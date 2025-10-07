@@ -1,3 +1,5 @@
+import "./mainMusi.css";
+
 export default function Home(){
     
     return(

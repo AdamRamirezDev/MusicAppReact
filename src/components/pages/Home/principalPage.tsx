@@ -1,7 +1,7 @@
-import Busqueda from "./components/busqueda";
-import Home from "./components/home";
-import Reproductor from "./components/reproductor";
-import Sidebar from "./components/sidebar";
+import Busqueda from "./components/busqueda/busqueda";
+import Home from "./components/mainMusic/mainMusic";
+import Reproductor from "./components/reproductor/reproductor";
+import Sidebar from "./components/sidebar/sidebar";
 
 export default function PrincipalPage() {
   return (

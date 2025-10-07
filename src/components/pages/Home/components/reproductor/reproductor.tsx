@@ -1,3 +1,5 @@
+import "./reprodutor.css";
+
 export default function Reproductor(){
     
         return (
