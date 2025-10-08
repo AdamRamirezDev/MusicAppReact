@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import "./mainMusi.css";
+import "./mainMusic.css";
 
 interface Album {
 
     id: number,
+    cover_small: string,
     cover_medium: string,
     title: string,
     artist: { name: string }
@@ -38,15 +39,15 @@ export default function Home() {
 
   return (
     <div className="home__container">
-      <div className="album-card">
         {albums.map((album) => (
-          <div key={album.id} className="album-card">
+        <div className="carta__album">
+          <div key={album.id} className="">
             <img src={album.cover_medium} alt={album.title}></img>
             <h3>{album.title}</h3>
             <p>{album.artist.name}</p>
           </div>
+         </div> 
         ))}
       </div>
-    </div>
   );
 }
