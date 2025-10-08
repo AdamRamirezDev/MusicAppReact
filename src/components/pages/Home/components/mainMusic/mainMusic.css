@@ -1,15 +1,27 @@
 
 /* Estilo de Home */ 
 .home__container{
-    width: 100%;
-    height: 80%;
-    border: 10px solid rgb(43, 255, 0);
+    width: 90%;
+    height: 70%;
     padding: 10px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
     overflow-x: auto;
+    margin-left: 15px;
+    border-bottom: 1px solid gray;
     scrollbar-width: none;
+}
+
+.home__container__divisor{
+    width: 100%;
+    height: 10%;
+    padding:  5px 35px;
+}
+
+.home__container__titulo{
+    color: white;
+    font-weight: 500;
 }
 
 .carta__album{
