@@ -6,13 +6,35 @@
     border: 10px solid rgb(43, 255, 0);
     padding: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     overflow-x: auto;
+    scrollbar-width: none;
 }
 
 .carta__album{
-    width: 300px;
-    height: 340px;
-    border: 10px solid salmon;
+    width: 210px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+.carta__album__img{
+    width: 200px;
+    height: 200px;
+    border-radius: 22px;
+}
+
+.carta__album__titulo{
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+}
+
+.carta__album__description{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(199, 199, 199);
 }

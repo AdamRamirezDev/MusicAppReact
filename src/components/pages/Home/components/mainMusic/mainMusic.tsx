@@ -41,10 +41,10 @@ export default function Home() {
     <div className="home__container">
         {albums.map((album) => (
         <div className="carta__album">
-          <div key={album.id} className="">
-            <img src={album.cover_medium} alt={album.title}></img>
-            <h3>{album.title}</h3>
-            <p>{album.artist.name}</p>
+          <div key={album.id}>
+            <img src={album.cover_medium} alt={album.title} className="carta__album__img"></img>
+            <h3 className="carta__album__titulo">{album.title}</h3>
+            <p className="carta__album__description">{album.artist.name}</p>
           </div>
          </div> 
         ))}

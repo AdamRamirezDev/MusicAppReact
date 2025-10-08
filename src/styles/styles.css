@@ -1,7 +1,6 @@
 .principal__container{
     width: 100%;
     height: 100vh;
-    border: 3px solid red;
     overflow-y: hidden;
     display: flex;
     flex-direction: column;
@@ -15,19 +14,6 @@
 
 .division{
     width: 70%;
-}
-
-.division__sidebar{
-    width: 30%;
-    height: 100%;
-    border: 10px solid salmon;
-}
-
-.division__reproductor{
-    height: 28%;
-    margin-top: auto;
-    display: flex;
-    max-height: 200px;
 }
 
 
