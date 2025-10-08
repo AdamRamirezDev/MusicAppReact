@@ -12,7 +12,6 @@ export default function Busqueda() {
         e.preventDefault();
         searchSongs(query);
       }  
-
     }
 
     return (
