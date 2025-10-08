@@ -27,8 +27,11 @@ app.get("/api/albums", async (req, res) => {
     try{
         const response = await fetch("https://api.deezer.com/chart/0/albums?limit=10");
         const data = await response.json();
-        res.json({data: data.albums.data});
+        res.json({data: data.data});
+        console.log("Aqui si llego")
+        console.log(data)
     } catch( data ){
+        console.error("Error al obtener albumes: ", error);
         res.status(500).json({error: "Error al obtener albumes"});
     }
 });
