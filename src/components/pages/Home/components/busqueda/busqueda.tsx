@@ -2,6 +2,11 @@ import "./busqueda.css";
 import { BusquedaDeezer } from "../../../../../hooks/busquedaDeezer";
 import React from "react";
 
+interface BusquedaProps {
+  setSearchResults: (tracks: any[]) => void;
+  setIsSearching: (value: boolean) => void;
+}
+
 export default function Busqueda() {
     
     const [query, setQuery] = React.useState("");
