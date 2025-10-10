@@ -2,13 +2,14 @@ import "./reprodutor.css";
 import type { Track } from "../../../../../hooks/busquedaDeezer";
 import { useEffect, useRef, useState } from "react";
 
-interface ReproductorProps {
+export interface ReproductorProps {
   currentTrack: Track | null;
 }
 
 export default function Reproductor({ currentTrack }: ReproductorProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [volume, setVolume] = useState(0.5);
 
   useEffect(() => {
     if (audioRef.current && currentTrack) {
@@ -47,7 +48,17 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
         <button onClick={togglePlay}>{isPlaying ? "PAUSA" : "PLAY"}</button>
       </div>
       <audio ref={audioRef} />
-      <div className="reproductor__container__volumen"></div>
+      <div className="reproductor__container__volumen">
+        <p>Icono</p>
+        <input
+          id="volume"
+          type="range"
+          min="0"
+          max="20"
+          value={volume}
+          onChange={(e) => setVolume(parseFloat(e.target.value))}
+        />
+      </div>
     </div>
   );
 }

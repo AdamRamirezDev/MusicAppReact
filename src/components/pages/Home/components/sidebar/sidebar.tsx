@@ -1,13 +1,13 @@
 import "./sidebar.css";
+import type { ReproductorProps } from "../reproductor/reproductor";
 
-export default function Sidebar(){
-    
+export default function Sidebar({ currentTrack}: ReproductorProps){
+
     return (
         <div className="sidebar__container">
-            <p className="sidebar__title">Nombre de la cancion</p>
-            <div className="sidebar__img"></div>
-            <p className="sidebar__name"></p>
-            <p className="sidebar__autor"></p>
+            <img className="sidebar__img" src={currentTrack?.album.cover_big}></img>
+            <h1 className="sidebar__name">{currentTrack?.title}</h1>
+            <p className="sidebar__autor">{currentTrack?.artist.name}</p>
             <p className="sidebar__caracteristicas"></p>
         </div>
     )

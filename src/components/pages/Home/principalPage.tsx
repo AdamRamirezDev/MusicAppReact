@@ -28,7 +28,7 @@ export default function PrincipalPage() {
         </div>
         <div className="division__sidebar">
           {/*Componente Sidebar*/}
-          <Sidebar />
+          <Sidebar currentTrack={currentTrack} />
         </div>
       </div>
       <div className="division__reproductor">
