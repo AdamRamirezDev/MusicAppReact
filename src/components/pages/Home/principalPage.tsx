@@ -3,10 +3,12 @@ import Busqueda from "./components/busqueda/busqueda";
 import Home from "./components/mainMusic/mainMusic";
 import Reproductor from "./components/reproductor/reproductor";
 import Sidebar from "./components/sidebar/sidebar";
+import type { Track } from "../../../hooks/busquedaDeezer";
+
 
 export default function PrincipalPage() {
     
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState<Track[]>([]);
   const [isSearching, setIsSearching] = useState(false);
 
   return (
@@ -22,13 +24,11 @@ export default function PrincipalPage() {
         <div className="division__sidebar">
           {/*Componente Sidebar*/}
           <Sidebar />
-
         </div>
       </div>
       <div className="division__reproductor">
         {/*Componente de reproduccion*/}
         <Reproductor />
-
       </div>
     </div>
   );

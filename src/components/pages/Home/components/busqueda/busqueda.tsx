@@ -1,23 +1,32 @@
 import "./busqueda.css";
 import { BusquedaDeezer } from "../../../../../hooks/busquedaDeezer";
-import React from "react";
+import React, { useEffect } from "react";
+import type { Track } from "../../../../../hooks/busquedaDeezer";
+
 
 interface BusquedaProps {
-  setSearchResults: (tracks: any[]) => void;
+  setSearchResults: (tracks: Track[]) => void;
   setIsSearching: (value: boolean) => void;
 }
 
-export default function Busqueda() {
+export default function Busqueda({ setSearchResults, setIsSearching }: BusquedaProps) {
     
     const [query, setQuery] = React.useState("");
-    const { tracks, loading, error, searchSongs } = BusquedaDeezer();
+    const { tracks, searchSongs } = BusquedaDeezer();
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
       if(e.key === "Enter"){
         e.preventDefault();
+        setIsSearching(true);
         searchSongs(query);
       }  
     }
+
+    useEffect(() => {
+      if(tracks.length > 0){
+        setSearchResults(tracks);
+      }
+    }, [tracks]);
 
     return (
     <div className="busqueda__container">
@@ -29,17 +38,6 @@ export default function Busqueda() {
         onKeyDown={handleKeyDown}
         placeholder="¿Que quieres escuchar?"
       ></input>
-
-        {loading && <p>Cargando...</p>}
-        {error && <p>{error}</p>}
-
-      <div>
-        {tracks.map((track) => (
-            <div key={track.id}>
-                {track.title}
-            </div>
-        ))}
-      </div>
     </div>
   );
 }

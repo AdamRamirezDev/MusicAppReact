@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./mainMusic.css";
+import type { Track } from "../../../../../hooks/busquedaDeezer";
 
 interface Album {
   id: number;
@@ -9,7 +10,12 @@ interface Album {
   artist: { name: string };
 }
 
-export default function Home() {
+interface HomeProps {
+  searchResults: Track[];
+  isSearching: boolean;
+}
+
+export default function Home({ searchResults, isSearching}: HomeProps) {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -34,6 +40,22 @@ export default function Home() {
 
   if (loading) return <p>Cargando álbumes...</p>;
   if (error) return <p>{error}</p>;
+
+  if(isSearching && searchResults.length > 0){
+    return (
+      <div className="home__container">
+        <div className="home__container__titulo">Resultados de busqueda</div>
+        {searchResults.map((track) => {
+          return (
+          <div className="carta__album" key={track.id}>
+            <img src={track.album.cover_medium} alt={track.title}></img>
+            <h3>{track.title}</h3>
+            <p>{track.artist.name}</p>
+          </div>
+          )})}
+      </div>
+    );
+  }
 
   return (
     <>

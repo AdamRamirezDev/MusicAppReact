@@ -1,8 +1,17 @@
 import { useState } from "react";
 
-interface Track {
-    id: number;
-    title: string;
+export interface Track {
+    id: number,
+    title: string,
+    artist: {
+        id: number;
+        name: string;
+    },
+    album: {
+        title: string,
+        cover_small: string,
+        cover_medium: string,
+    }
 }
 
 export const BusquedaDeezer = () => {
