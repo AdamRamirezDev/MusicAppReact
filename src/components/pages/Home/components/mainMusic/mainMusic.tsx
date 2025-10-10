@@ -41,22 +41,27 @@ export default function Home({ searchResults, isSearching}: HomeProps) {
   if (loading) return <p>Cargando álbumes...</p>;
   if (error) return <p>{error}</p>;
 
+  /* Resultados del buscador */
   if(isSearching && searchResults.length > 0){
     return (
+      <>
+       <div className="home__container__divisor">
+        <h1 className="home__container__titulo__busqueda">Resultados de busqueda</h1>
+      </div>
       <div className="home__container">
-        <div className="home__container__titulo">Resultados de busqueda</div>
         {searchResults.map((track) => {
           return (
-          <div className="carta__album" key={track.id}>
-            <img src={track.album.cover_medium} alt={track.title}></img>
+          <div className="carta__album__busqueda" key={track.id}>
+            <img className="carta__album__img" src={track.album.cover_medium} alt={track.title}></img>
             <h3>{track.title}</h3>
             <p>{track.artist.name}</p>
           </div>
           )})}
       </div>
+      </>
     );
   }
-
+  /* Resultados de los albumes mas escuchados */
   return (
     <>
       <div className="home__container__divisor">

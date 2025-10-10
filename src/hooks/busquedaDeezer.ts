@@ -11,7 +11,9 @@ export interface Track {
         title: string,
         cover_small: string,
         cover_medium: string,
-    }
+    },
+    preview: string
+    
 }
 
 export const BusquedaDeezer = () => {

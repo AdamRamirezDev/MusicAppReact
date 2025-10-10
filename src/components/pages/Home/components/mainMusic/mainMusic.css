@@ -50,3 +50,15 @@
     font-weight: 400;
     color: rgb(199, 199, 199);
 }
+
+/* Estilos para los resultados de busqueda */
+.home__container__titulo__busqueda{
+    font-weight: 500;
+    color: white;
+}
+
+.carta__album__busqueda{
+    width: 210px;
+    height: 300px;
+    cursor: pointer;
+}
