@@ -13,9 +13,10 @@ interface Album {
 interface HomeProps {
   searchResults: Track[];
   isSearching: boolean;
+  onPlayTrack: (track: Track) => void;
 }
 
-export default function Home({ searchResults, isSearching}: HomeProps) {
+export default function Home({ searchResults, isSearching, onPlayTrack}: HomeProps) {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -55,6 +56,7 @@ export default function Home({ searchResults, isSearching}: HomeProps) {
             <img className="carta__album__img" src={track.album.cover_medium} alt={track.title}></img>
             <h3>{track.title}</h3>
             <p>{track.artist.name}</p>
+            <button onClick={() => onPlayTrack(track)}>Reproducir</button>
           </div>
           )})}
       </div>
