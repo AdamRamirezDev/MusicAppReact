@@ -42,6 +42,7 @@
     margin-left: 20px;
 }
 
+/* Reproductor controles de play y pausa */
 .reproductor__container__controles{
     width: 40%;
     height: 100%;
@@ -50,7 +51,15 @@
     align-items: center;
     border: 3px solid red;
 }
+.reproductor__play{
+    width: 50px;
+    height: 50px;
+     border: none;
+    background-color: transparent;
+}
 
+
+/* Reproductor de volumen */
 .reproductor__container__volumen{
     width: 30%;
     height: 100%;
