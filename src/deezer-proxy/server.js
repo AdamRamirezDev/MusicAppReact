@@ -36,6 +36,20 @@ app.get("/api/albums", async (req, res) => {
     }
 });
 
+//Endpoint para obtener las canciones de un album
+app.get("/api/album/:id/tracks", async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const response = await fetch(`https://api.deezer.com/album/${id}/tracks`);
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error("Error al obtener las canciones del album:", error);
+        res.status(500).json({error: "Error al obtener las canciones del album"});
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`proxy server running on port: ${PORT}`);
 })
