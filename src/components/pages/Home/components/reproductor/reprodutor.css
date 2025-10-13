@@ -5,7 +5,8 @@
     height: 100%;
     margin-top: auto;
     display: flex;
-
+    z-index: 10;
+    background-color: #0a0a0a;
 }
 
 .division__reproductor{
@@ -49,7 +50,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid red;
 }
 .reproductor__play{
     width: 50px;

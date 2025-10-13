@@ -7,7 +7,12 @@ interface Album {
   cover_small: string;
   cover_medium: string;
   title: string;
-  artist: { name: string };
+  artist: { 
+    name: string 
+    picture: string,
+      md5_image: string,
+  };
+
 }
 
 interface HomeProps {
@@ -85,15 +90,18 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
       <>
         <div className="home__divisor__album">
             <img src={selectedAlbum.cover_medium} className="home__album__img"></img>
-            <h1 className="home__container__titulo">
-            {selectedAlbum.title}
-            </h1>
+            <div className="home__album__principal__information">
+              <p className="home__album__text">Lista publica</p>
+              <p className="home__album__titulo">{selectedAlbum.title}</p>
+              <p className="home__album__artist">{selectedAlbum.artist.name}</p>
+            </div>
           </div>
           <div className="home__album__songs">
             {selectedAlbumTracks.map((track) => (
               <div key={track.id} className="track__item">
+                <img src={selectedAlbum.cover_small} className="track__item__img"></img>
                 <p>{track.title}</p>
-                <button onClick={() => onPlayTrack(track)}>Reproducr</button>
+                <button onClick={() => onPlayTrack(track)}>Reproducir</button>
               </div>
             ))}
           </div>
