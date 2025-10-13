@@ -64,10 +64,11 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
   }
 
   /* Mostrar canciones del album que se selecciono */ 
-  const handleAlbumClick = async (albumId: number) => {
+  const handleAlbumClick = async (album: Album) => {
     try {
-      console.log("Album ID recibido: " ,albumId)
-      const response = await fetch(`http://localhost:3001/api/album/${albumId}/tracks`);
+      console.log("Album ID recibido: ", album.id)
+      setSelectedAlbum(album);
+      const response = await fetch(`http://localhost:3001/api/album/${album.id}/tracks`);
       const data = await response.json();
       console.log("Funcion hanlde, esta es la info: ", data)
       setSelectedAlbumTracks(data.data);
@@ -82,11 +83,13 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
   if(selectedAlbum){
     return (
       <>
-        <div className="home__container__divisor">
-          <h1 className="home__container__titulo">
-            Canciones del album : {selectedAlbum.title}
-          </h1>
-          <div className="tracks__container">
+        <div className="home__divisor__album">
+            <img src={selectedAlbum.cover_medium} className="home__album__img"></img>
+            <h1 className="home__container__titulo">
+            {selectedAlbum.title}
+            </h1>
+          </div>
+          <div className="home__album__songs">
             {selectedAlbumTracks.map((track) => (
               <div key={track.id} className="track__item">
                 <p>{track.title}</p>
@@ -94,7 +97,6 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
               </div>
             ))}
           </div>
-        </div>
       </>
     );
   }
@@ -112,7 +114,7 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
               <img
                 src={album.cover_medium}
                 alt={album.title}
-                onClick={() => handleAlbumClick(album.id)}
+                onClick={() => handleAlbumClick(album)}
                 className="carta__album__img"
               ></img>
               <h3 className="carta__album__titulo">{album.title}</h3>
