@@ -21,6 +21,9 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const [selectedAlbumTracks, setSelectedAlbumTracks] = useState<Track[]>([]);
+  const [selectedAlbum, setSelectedAlbum] = useState<Album | null>(null);
+
   useEffect(() => {
     const fetchAlbums = async () => {
       try {
@@ -35,12 +38,8 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
         setLoading(false);
       }
     };
-
     fetchAlbums();
   }, []);
-
-  if (loading) return <p>Cargando álbumes...</p>;
-  if (error) return <p>{error}</p>;
 
   /* Resultados del buscador */
   if(isSearching && searchResults.length > 0){
@@ -63,6 +62,43 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
       </>
     );
   }
+
+  /* Mostrar canciones del album que se selecciono */ 
+  const handleAlbumClick = async (albumId: number) => {
+    try {
+      console.log("Album ID recibido: " ,albumId)
+      const response = await fetch(`http://localhost:3001/api/album/${albumId}/tracks`);
+      const data = await response.json();
+      console.log("Funcion hanlde, esta es la info: ", data)
+      setSelectedAlbumTracks(data.data);
+    } catch (error){
+      console.error("Error al cargar las canciones del album", error);
+    }
+  };
+
+  if (loading) return <p>Cargando álbumes...</p>;
+  if (error) return <p>{error}</p>;
+
+  if(selectedAlbum){
+    return (
+      <>
+        <div className="home__container__divisor">
+          <h1 className="home__container__titulo">
+            Canciones del album : {selectedAlbum.title}
+          </h1>
+          <div className="tracks__container">
+            {selectedAlbumTracks.map((track) => (
+              <div key={track.id} className="track__item">
+                <p>{track.title}</p>
+                <button onClick={() => onPlayTrack(track)}>Reproducr</button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </>
+    );
+  }
+
   /* Resultados de los albumes mas escuchados */
   return (
     <>
@@ -76,6 +112,7 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
               <img
                 src={album.cover_medium}
                 alt={album.title}
+                onClick={() => handleAlbumClick(album.id)}
                 className="carta__album__img"
               ></img>
               <h3 className="carta__album__titulo">{album.title}</h3>
