@@ -113,9 +113,10 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
 
   /* Resultados de los albumes mas escuchados */
   return (
-    <>
+    <div className="home__container__design">
       <div className="home__container__divisor">
-        <h1 className="home__container__titulo">Albumes mas escuchados</h1>
+        <p className="home__container__titulo">Albumes mas escuchados</p>
+        <p className="home__container__text">Lo estan rompiendo en America Latina</p>
       </div>
       <div className="home__container">
         {albums.map((album) => (
@@ -133,6 +134,6 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }

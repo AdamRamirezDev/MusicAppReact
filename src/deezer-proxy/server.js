@@ -25,7 +25,7 @@ app.get("/api/search", async (req, res) => {
 // Endopoints de albumes populares
 app.get("/api/albums", async (req, res) => {
     try{
-        const response = await fetch("https://api.deezer.com/chart/0/albums?limit=20");
+        const response = await fetch("https://api.deezer.com/chart/0/albums?limit=10");
         const data = await response.json();
         res.json({data: data.data});
         console.log("Aqui si llego")

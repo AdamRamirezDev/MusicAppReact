@@ -10,12 +10,10 @@
 }
 
 .division__reproductor{
-    height: 20%;
-    max-height: 50px;
+    height: 120px;
     margin-top: auto;
     display: flex;
     max-height: 180px;
-    border-top: 1px solid gray;
 }
 
 /* Reproductor parte izquierda */
