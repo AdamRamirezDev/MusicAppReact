@@ -12,7 +12,7 @@ interface Album {
     picture: string,
       md5_image: string,
   };
-
+  duration: number,
 }
 
 interface HomeProps {
@@ -49,22 +49,43 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
   /* Resultados del buscador */
   if(isSearching && searchResults.length > 0){
     return (
-      <>
+      <div className="home__container__design__songs">
        <div className="home__container__divisor">
         <h1 className="home__container__titulo__busqueda">Resultados de busqueda</h1>
       </div>
-      <div className="home__album__songs">
+      {/*Contenedor que muestra orden */}
+      <div className="home__container__order">
+        <p>#</p>
+        <p>Titulo</p>
+        <p>Artista</p>
+        <p>Album</p>
+        <p>Duracion</p>
+        <p>Rank</p>
+      </div>
+      
+      <div className="home__container__songs">
         {searchResults.map((track) => {
           return (
-          <div className="track__item" key={track.id}>
-            <img className="carta__album__cancion" src={track.album.cover_small} alt={track.title}></img>
-            <h3>{track.title}</h3>
-            <p>{track.artist.name}</p>
-            <button onClick={() => onPlayTrack(track)} className="carta__album__btn">Reproducir</button>
+          <div className="trak__item__song" key={track.id}>
+            <div className="track__item__song__division__num1">
+              <p>1222</p>
+              <button onClick={() => onPlayTrack(track)} className="carta__album__btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fffefe" fill-opacity="0" stroke="#fffefe" stroke-dasharray="40" stroke-dashoffset="40" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 6l10 6l-10 6Z"><animate fill="freeze" attributeName="fill-opacity" begin="0.475s" dur="0.475s" values="0;1"/><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.475s" values="40;0"/></path></svg></button>
+              <img className="track__item__song__img" src={track.album.cover_small} alt={track.title}></img>
+            </div>
+            <div className="track__item__song__division__num2">
+              <h3>{track.title}</h3>
+              <p>{track.artist.name}</p>
+            </div>
+            <div className="track__item__duration">
+              <p>{track.album.title}</p>
+              <p>{track.duration}</p>
+              <p>{track.rank}</p>
+
+            </div>
           </div>
           )})}
       </div>
-      </>
+      </div>
     );
   }
 
@@ -100,10 +121,9 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
           <div className="home__album__songs">
             {selectedAlbumTracks.map((track) => (
               <div key={track.id} className="track__item">
-                <button onClick={() => onPlayTrack(track)} className="track__item__button">Reproducir</button>
+                <button onClick={() => onPlayTrack(track)} className="carta__album__btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fffefe" fill-opacity="0" stroke="#fffefe" stroke-dasharray="40" stroke-dashoffset="40" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 6l10 6l-10 6Z"><animate fill="freeze" attributeName="fill-opacity" begin="0.475s" dur="0.475s" values="0;1"/><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.475s" values="40;0"/></path></svg></button>
                 <img src={selectedAlbum.cover_small} className="track__item__img"></img>
                 <p>{track.title}</p>
-                
               </div>
             ))}
           </div>

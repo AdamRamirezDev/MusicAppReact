@@ -69,9 +69,86 @@
 }
 
 /* Estilos para los resultados de busqueda */
+.home__container__design__songs{
+    width: 98%;
+    height: 87%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    border-radius: 18px;
+    margin: auto;
+}
+
 .home__container__titulo__busqueda{
     font-weight: 500;
     color: white;
+}
+
+.home__container__order{
+    width: 99%;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 0px 50px;
+    background-color: rgb(63, 63, 63);
+}
+
+.home__container__songs{
+    width: 99%;
+    margin: auto;
+    padding-top: 10px;
+    border-bottom-left-radius: 19px;
+    border-bottom-right-radius: 19px;
+    background: #1a1a1a;
+}
+
+.trak__item__song{
+    width: 95%;
+    height: 80px;
+    border: 2px solid red;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.track__item__song__division__num1{
+    width: 15%;
+    height: 100%;
+    border: 3px solid blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.track__item__song__division__num2{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: 3px solid salmon;
+}
+
+.track__item__song__img{
+    border-radius: 4px;
+}
+
+.track__item__duration{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    border: 4px solid blue;
+
 }
 
 .carta__album__busqueda{
@@ -82,10 +159,13 @@
 }
 
 .carta__album__btn{
-    width: 80px;
-    height: 30px;
-    border-radius: 10px;
-    background-color: rgb(48, 48, 48);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgb(43, 43, 43);
     border: none;
     cursor: pointer;
 }
@@ -96,15 +176,15 @@
 
 /* Estilos para los resultados de clickear un album */
 .home__divisor__album{
-    width: 100%;
+    width: 98%;
     height: 37%;
+    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     gap: 20px;
     align-items: center;
-    border-top-right-radius: 18px;
-    border-bottom-right-radius: 18px;
+    border-radius: 18px;
     background: #002b2b;
     background: linear-gradient(180deg, rgba(0, 43, 43, 1) 0%, rgba(0, 75, 77, 1) 17%, rgba(0, 125, 128, 1) 56%, rgba(92, 247, 255, 1) 100%);
 }
@@ -140,7 +220,6 @@
     align-items: center;
     justify-content: flex-start;
     gap: 20px;
-
 }
 
 .track__item__img{
