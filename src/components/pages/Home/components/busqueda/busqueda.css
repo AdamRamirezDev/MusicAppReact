@@ -1,12 +1,11 @@
 /* Estilo de Busqueda */ 
 .busqueda__container{
     width: 100%;
-    height: 20%;
-    max-height: 200px;
+    height: 12%;
+    max-height: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid gray;
 }
 
 .input__busqueda{
