@@ -2,7 +2,6 @@ import { useState } from "react";
 import Busqueda from "./components/busqueda/busqueda";
 import Home from "./components/mainMusic/mainMusic";
 import Reproductor from "./components/reproductor/reproductor";
-import Sidebar from "./components/sidebar/sidebar";
 import type { Track } from "../../../hooks/busquedaDeezer";
 
 export default function PrincipalPage() {
@@ -25,10 +24,6 @@ export default function PrincipalPage() {
             isSearching={isSearching} 
             onPlayTrack={setCurrentTrack}
           />
-        </div>
-        <div className="division__sidebar">
-          {/*Componente Sidebar*/}
-          <Sidebar currentTrack={currentTrack} />
         </div>
       </div>
       <div className="division__reproductor">

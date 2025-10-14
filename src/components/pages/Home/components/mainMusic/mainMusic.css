@@ -6,18 +6,17 @@
     padding: 10px;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(4, 1fr);
-    overflow-x: auto;
+    grid-template-columns: repeat(6, 1fr);
     border-bottom: 1px solid gray;
     scrollbar-width: none;
-    border: 3px solid blue;
+    margin-left: 15px;
+    border: 5px solid salmon;
 }
 
 .home__container__divisor{
     width: 100%;
     height: 10%;
     padding:  5px 35px;
-    border: 5px solid red;
 }
 
 .home__container__titulo{
@@ -62,6 +61,19 @@
     width: 210px;
     height: 300px;
     cursor: pointer;
+}
+
+.carta__album__btn{
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgb(48, 48, 48);
+    border: none;
+    cursor: pointer;
+}
+
+.carta__album__btn:hover{
+    background-color: rgb(145, 145, 145);
 }
 
 /* Estilos para los resultados de clickear un album */

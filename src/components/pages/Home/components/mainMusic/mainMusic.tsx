@@ -60,7 +60,7 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
             <img className="carta__album__img" src={track.album.cover_medium} alt={track.title}></img>
             <h3>{track.title}</h3>
             <p>{track.artist.name}</p>
-            <button onClick={() => onPlayTrack(track)}>Reproducir</button>
+            <button onClick={() => onPlayTrack(track)} className="carta__album__btn">Reproducir</button>
           </div>
           )})}
       </div>
