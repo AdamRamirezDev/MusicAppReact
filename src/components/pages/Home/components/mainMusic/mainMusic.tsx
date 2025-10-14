@@ -53,11 +53,11 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
        <div className="home__container__divisor">
         <h1 className="home__container__titulo__busqueda">Resultados de busqueda</h1>
       </div>
-      <div className="home__container">
+      <div className="home__album__songs">
         {searchResults.map((track) => {
           return (
-          <div className="carta__album__busqueda" key={track.id}>
-            <img className="carta__album__img" src={track.album.cover_medium} alt={track.title}></img>
+          <div className="track__item" key={track.id}>
+            <img className="carta__album__cancion" src={track.album.cover_small} alt={track.title}></img>
             <h3>{track.title}</h3>
             <p>{track.artist.name}</p>
             <button onClick={() => onPlayTrack(track)} className="carta__album__btn">Reproducir</button>
