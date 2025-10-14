@@ -85,6 +85,7 @@ export default function Home({ searchResults, isSearching, onPlayTrack}: HomePro
   if (loading) return <p>Cargando álbumes...</p>;
   if (error) return <p>{error}</p>;
 
+  /* Resultados de el album seleccionado */
   if(selectedAlbum){
     return (
       <>
