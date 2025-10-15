@@ -68,6 +68,41 @@
     color: rgb(199, 199, 199);
 }
 
+/* Estilos para la barra de orden */
+.home__container__order{
+    width: 99%;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 0px 50px;
+    background-color: rgb(63, 63, 63);
+}
+
+.order__information__num1{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border: 3px solid red;
+}
+
+.order__information__num2{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: auto;
+    gap: 50px;
+}
+
 /* Estilos para los resultados de busqueda */
 .home__container__design__songs{
     width: 98%;
@@ -83,20 +118,6 @@
     color: white;
 }
 
-.home__container__order{
-    width: 99%;
-    height: 50px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 50px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    padding: 0px 50px;
-    background-color: rgb(63, 63, 63);
-}
-
 .home__container__songs{
     width: 99%;
     margin: auto;
@@ -104,36 +125,37 @@
     border-bottom-left-radius: 19px;
     border-bottom-right-radius: 19px;
     background: #1a1a1a;
+    border: 3px solid blue;
 }
 
 .trak__item__song{
     width: 95%;
     height: 80px;
-    border: 2px solid red;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    border-bottom: 1px solid rgb(124, 124, 124);
 }
 
 .track__item__song__division__num1{
     width: 15%;
     height: 100%;
-    border: 3px solid blue;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+
 }
 
 .track__item__song__division__num2{
-    width: 15%;
+    width: 30%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    border: 3px solid salmon;
+
 }
 
 .track__item__song__img{
@@ -147,8 +169,18 @@
     justify-content: center;
     align-items: center;
     margin-left: auto;
-    border: 4px solid blue;
+    
+}
 
+.track__item__album__title, 
+.track__item__song__duration, 
+.track__item__song__rank{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .carta__album__busqueda{
@@ -173,6 +205,9 @@
 .carta__album__btn:hover{
     background-color: rgb(145, 145, 145);
 }
+
+
+
 
 /* Estilos para los resultados de clickear un album */
 .home__divisor__album{
