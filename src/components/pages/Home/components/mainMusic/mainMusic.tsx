@@ -6,6 +6,8 @@ interface HomeProps {
   searchResults: Track[];
   isSearching: boolean;
   onPlayTrack: (track: Track) => void;
+  selectedAlbum: Album | null;
+  setSelectedAlbum: (album: Album | null) => void;
 }
 
 export default function Home({
@@ -16,7 +18,6 @@ export default function Home({
   const [albums, setAlbums] = useState<Album[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
   const [selectedAlbumTracks, setSelectedAlbumTracks] = useState<Track[]>([]);
   const [selectedAlbum, setSelectedAlbum] = useState<Album | null>(null);
 
@@ -164,7 +165,6 @@ export default function Home({
             <p className="home__album__artista">{selectedAlbum.artist.name}</p>
           </div>
         </div>
-        {/* Contenedor de orden */}
         <div className="home__container__order">
           <div className="order__information__num1">
             <p className="order__information__number">#</p>

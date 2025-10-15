@@ -8,6 +8,20 @@
     align-items: center;
 }
 
+.back__btn{
+    width: 60px;
+    height: 60px;
+    background-color: rgb(56, 56, 56);
+    border-radius: 50%;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.back__btn:hover{
+    background-color: rgb(61, 61, 61);
+}
+
 .input__busqueda{
     width: 500px;
     height: 60px;
