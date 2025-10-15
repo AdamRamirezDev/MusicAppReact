@@ -70,7 +70,7 @@
 
 /* Estilos para la barra de orden */
 .home__container__order{
-    width: 99%;
+    width: 98%;
     height: 40px;
     margin: auto;
     display: flex;
@@ -79,8 +79,9 @@
     gap: 50px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    margin-top: 20px;
     padding: 0px 50px;
-    background-color: rgb(63, 63, 63);
+    background-color: rgb(44, 44, 44);
 }
 
 .order__information__num1{
@@ -138,13 +139,12 @@
 }
 
 .home__container__songs{
-    width: 99%;
+    width: 98%;
     margin: auto;
     padding-top: 10px;
     border-bottom-left-radius: 19px;
     border-bottom-right-radius: 19px;
     background: #1a1a1a;
-    border: 3px solid blue;
 }
 
 .trak__item__song{
@@ -225,20 +225,18 @@
     background-color: rgb(145, 145, 145);
 }
 
-
-
-
 /* Estilos para los resultados de clickear un album */
 .home__divisor__album{
     width: 98%;
-    height: 37%;
+    height: 45%;
     margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    gap: 20px;
     align-items: center;
-    border-radius: 18px;
+    gap: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     background: #002b2b;
     background: linear-gradient(180deg, rgba(0, 43, 43, 1) 0%, rgba(0, 75, 77, 1) 17%, rgba(0, 125, 128, 1) 56%, rgba(92, 247, 255, 1) 100%);
 }
@@ -256,7 +254,7 @@
 }
 
 .home__album__titulo{
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
 }
 

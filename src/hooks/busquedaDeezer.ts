@@ -1,21 +1,5 @@
 import { useState } from "react";
-
-export interface Track {
-    id: number,
-    title: string,
-    artist: {
-        id: number;
-        name: string;
-    },
-    album: {
-        title: string,
-        cover_small: string,
-        cover_medium: string,
-    },
-    preview: string,
-    duration: number,
-    rank: number,
-}
+import type { Track } from "../types/deezerTypes";
 
 export const BusquedaDeezer = () => {
     const [tracks, setTracks] = useState<Track[]>([]);

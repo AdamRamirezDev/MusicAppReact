@@ -2,7 +2,7 @@ import { useState } from "react";
 import Busqueda from "./components/busqueda/busqueda";
 import Home from "./components/mainMusic/mainMusic";
 import Reproductor from "./components/reproductor/reproductor";
-import type { Track } from "../../../hooks/busquedaDeezer";
+import type { Track } from "../../../types/deezerTypes";
 
 export default function PrincipalPage() {
   const [searchResults, setSearchResults] = useState<Track[]>([]);

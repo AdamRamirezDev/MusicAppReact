@@ -1,19 +1,6 @@
 import { useEffect, useState } from "react";
 import "./mainMusic.css";
-import type { Track } from "../../../../../hooks/busquedaDeezer";
-
-interface Album {
-  id: number;
-  cover_small: string;
-  cover_medium: string;
-  title: string;
-  artist: {
-    name: string;
-    picture: string;
-    md5_image: string;
-  };
-  duration: number;
-}
+import type { Track, Album } from "../../../../../types/deezerTypes";
 
 interface HomeProps {
   searchResults: Track[];
@@ -165,7 +152,7 @@ export default function Home({
   /* Resultados de el album seleccionado */
   if (selectedAlbum) {
     return (
-      <>
+      <div className="home__container__design__songs">
         <div className="home__divisor__album">
           <img
             src={selectedAlbum.cover_medium}
@@ -192,7 +179,7 @@ export default function Home({
         
         <div className="home__container__songs">
           {selectedAlbumTracks.map((track) => (
-            <div key={track.id} className="track__item__song">
+            <div key={selectedAlbum.id} className="trak__item__song">
               <p>1222</p>
               <button
                 onClick={() => onPlayTrack(track)}
@@ -237,22 +224,22 @@ export default function Home({
                 alt={track.title}
               ></img>
                 <div className="track__item__song__division__num2">
-                  <h3>{track.title}</h3>
-                  <p>{track.artist.name}</p>
+                  <h3>{selectedAlbum.title}</h3>
+                  <p>{selectedAlbum.artist.name}</p>
                 </div>
                 <div className="track__item__duration">
                   <p className="track__item__album__title">
-                    {track.album.title}
+                  
                   </p>
                   <p className="track__item__song__duration">
-                    {track.duration}
+                    
                   </p>
                   <p className="track__item__song__rank">{track.rank}</p>
                 </div>
             </div>
           ))}
         </div>
-      </>
+      </div>
     );
   }
 

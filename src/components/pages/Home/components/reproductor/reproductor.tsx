@@ -1,6 +1,6 @@
 import "./reprodutor.css";
-import type { Track } from "../../../../../hooks/busquedaDeezer";
 import { useEffect, useRef, useState } from "react";
+import type { Track } from "../../../../../types/deezerTypes";
 
 export interface ReproductorProps {
   currentTrack: Track | null;

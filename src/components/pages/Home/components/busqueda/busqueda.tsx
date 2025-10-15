@@ -1,7 +1,7 @@
 import "./busqueda.css";
 import { BusquedaDeezer } from "../../../../../hooks/busquedaDeezer";
 import React, { useEffect } from "react";
-import type { Track } from "../../../../../hooks/busquedaDeezer";
+import type { Track } from "../../../../../types/deezerTypes";
 
 
 interface BusquedaProps {
