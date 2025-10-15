@@ -19,6 +19,7 @@ export default function Busqueda({ setSearchResults, setIsSearching }: BusquedaP
         e.preventDefault();
         setIsSearching(true);
         searchSongs(query);
+        setQuery("");
       }  
     }
 

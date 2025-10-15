@@ -62,9 +62,8 @@ export default function Home({
         {/*Contenedor que muestra orden */}
         <div className="home__container__order">
           <div className="order__information__num1">
-            <p>#</p>
-            <p>Titulo</p>
-            <p>Artista</p>
+            <p className="order__information__number">#</p>
+            <p className="order__information__title">Titulo</p>
           </div>
           <div className="order__information__num2">
             <p>Album</p>
@@ -178,11 +177,11 @@ export default function Home({
             <p className="home__album__artista">{selectedAlbum.artist.name}</p>
           </div>
         </div>
+        {/* Contenedor de orden */}
         <div className="home__container__order">
           <div className="order__information__num1">
-            <p>#</p>
-            <p>Titulo</p>
-            <p>Artista</p>
+            <p className="order__information__number">#</p>
+            <p className="order__information__title">Titulo</p>
           </div>
           <div className="order__information__num2">
             <p>Album</p>
@@ -190,9 +189,11 @@ export default function Home({
             <p>Rank</p>
           </div>
         </div>
-        <div className="home__album__songs">
+        
+        <div className="home__container__songs">
           {selectedAlbumTracks.map((track) => (
-            <div key={track.id} className="track__item">
+            <div key={track.id} className="track__item__song">
+              <p>1222</p>
               <button
                 onClick={() => onPlayTrack(track)}
                 className="carta__album__btn"
@@ -231,10 +232,23 @@ export default function Home({
                 </svg>
               </button>
               <img
+                className="track__item__song__img"
                 src={selectedAlbum.cover_small}
-                className="track__item__img"
+                alt={track.title}
               ></img>
-              <p>{track.title}</p>
+                <div className="track__item__song__division__num2">
+                  <h3>{track.title}</h3>
+                  <p>{track.artist.name}</p>
+                </div>
+                <div className="track__item__duration">
+                  <p className="track__item__album__title">
+                    {track.album.title}
+                  </p>
+                  <p className="track__item__song__duration">
+                    {track.duration}
+                  </p>
+                  <p className="track__item__song__rank">{track.rank}</p>
+                </div>
             </div>
           ))}
         </div>
