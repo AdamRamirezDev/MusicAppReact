@@ -26,6 +26,5 @@ export interface Album {
     md5_image: string;
   };
   duration: number;
-  track: Track[];
 
 }

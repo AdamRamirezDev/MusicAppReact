@@ -16,7 +16,9 @@ app.get("/api/search", async (req, res) => {
     try {
         const response = await fetch(`https://api.deezer.com/search?q=${encodeURIComponent(q)}`);
         const data = await response.json();
-        res.json(data);
+        console.log("Endpoint de busqueda: ", data)
+        res.json({data : data.data});
+        
     } catch(error){
         res.status(500).json({error: "Error al conectar con Deezer"});
     }
@@ -28,8 +30,7 @@ app.get("/api/albums", async (req, res) => {
         const response = await fetch("https://api.deezer.com/chart/0/albums?limit=10");
         const data = await response.json();
         res.json({data: data.data});
-        console.log("Aqui si llego")
-        console.log(data)
+        console.log("Endpoint de albumes populares: ",data)
     } catch( data ){
         console.error("Error al obtener albumes: ", error);
         res.status(500).json({error: "Error al obtener albumes"});
@@ -48,6 +49,7 @@ app.get("/api/album/:id/tracks", async (req, res) => {
             },
         });
         const data = await response.json();
+        console.log("Endpoint de canciones de album",data)
         res.json(data);
         
     } catch (error) {

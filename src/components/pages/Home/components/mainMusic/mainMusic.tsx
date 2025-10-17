@@ -26,7 +26,7 @@ export default function Home({
       try {
         const response = await fetch("http://localhost:3001/api/albums");
         const data = await response.json();
-        console.log(data);
+        console.log("Albumes: " ,data);
         setAlbums(data.data);
       } catch (error) {
         console.error(error);
@@ -79,13 +79,13 @@ export default function Home({
                     >
                       <path
                         fill="#fffefe"
-                        fill-opacity="0"
+                        fillOpacity="0"
                         stroke="#fffefe"
-                        stroke-dasharray="40"
-                        stroke-dashoffset="40"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
+                        strokeDasharray="40"
+                        strokeDashoffset="40"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.5"
                         d="M8 6l10 6l-10 6Z"
                       >
                         <animate
@@ -178,11 +178,11 @@ export default function Home({
         </div>
         
         <div className="home__container__songs">
-          {selectedAlbumTracks.map((track) => (
-            <div key={track.id} className="trak__item__song">
+          {selectedAlbumTracks.map((song) => (
+            <div key={song.id} className="trak__item__song">
               <p>1222</p>
               <button
-                onClick={() => onPlayTrack(track)}
+                onClick={() => onPlayTrack(song)}
                 className="carta__album__btn"
               >
                 <svg
@@ -193,13 +193,13 @@ export default function Home({
                 >
                   <path
                     fill="#fffefe"
-                    fill-opacity="0"
+                    fillOpacity="0"
                     stroke="#fffefe"
-                    stroke-dasharray="40"
-                    stroke-dashoffset="40"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
+                    strokeDasharray="40"
+                    strokeDashoffset="40"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.5"
                     d="M8 6l10 6l-10 6Z"
                   >
                     <animate
@@ -221,7 +221,7 @@ export default function Home({
               <img
                 className="track__item__song__img"
                 src={selectedAlbum.cover_small}
-                alt={track.title}
+                alt={song.title}
               ></img>
                 <div className="track__item__song__division__num2">
                   <h3>{selectedAlbum.title}</h3>
@@ -234,7 +234,7 @@ export default function Home({
                   <p className="track__item__song__duration">
                     
                   </p>
-                  <p className="track__item__song__rank">{track.rank}</p>
+                  <p className="track__item__song__rank">{song.rank}</p>
                 </div>
             </div>
           ))}

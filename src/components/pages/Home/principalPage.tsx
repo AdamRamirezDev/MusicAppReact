@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Busqueda from "./components/busqueda/busqueda";
 import Home from "./components/mainMusic/mainMusic";
 import Reproductor from "./components/reproductor/reproductor";
@@ -6,7 +6,7 @@ import type { Track, Album } from "../../../types/deezerTypes";
 
 export default function PrincipalPage() {
   const [searchResults, setSearchResults] = useState<Track[]>([]);
-  const [isSearching, setIsSearching] = useState(false);
+  const [isSearching, setIsSearching] = useState<true | false>(false);
   const [currentTrack, setCurrentTrack] = useState<Track[] | null>(null);
   const [selectedAlbum, setSelectedAlbum] = useState<Album | null>(null);
 
@@ -14,6 +14,7 @@ export default function PrincipalPage() {
   function resetToMain(){
     setIsSearching(false);
     setSelectedAlbum(null);
+    setCurrentTrack(null);
   }
 
   return (
