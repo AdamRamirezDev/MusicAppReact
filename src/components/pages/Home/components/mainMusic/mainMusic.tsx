@@ -60,7 +60,7 @@ export default function Home({
           </div>
         </div>
 
-        {/* Aqui termina el contenedor de orden */}
+        {/* Contenedor de canciones */}
         <div className="home__container__songs">
           {searchResults.map((track) => {
             return (
@@ -179,7 +179,7 @@ export default function Home({
         
         <div className="home__container__songs">
           {selectedAlbumTracks.map((track) => (
-            <div key={selectedAlbum.id} className="trak__item__song">
+            <div key={track.id} className="trak__item__song">
               <p>1222</p>
               <button
                 onClick={() => onPlayTrack(track)}
