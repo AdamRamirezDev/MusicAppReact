@@ -180,6 +180,7 @@ export default function Home({
         <div className="home__container__songs">
           {selectedAlbumTracks.map((song) => (
             <div key={song.id} className="trak__item__song">
+              <div className="track__item__song__division__num1">
               <p>1222</p>
               <button
                 onClick={() => onPlayTrack(song)}
@@ -223,8 +224,9 @@ export default function Home({
                 src={selectedAlbum.cover_small}
                 alt={song.title}
               ></img>
+              </div>
                 <div className="track__item__song__division__num2">
-                  <h3>{selectedAlbum.title}</h3>
+                  <h3>{song.title}</h3>
                   <p>{selectedAlbum.artist.name}</p>
                 </div>
                 <div className="track__item__duration">

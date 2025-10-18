@@ -16,6 +16,7 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
       audioRef.current.src = currentTrack.preview;
       audioRef.current.play();
       setIsPlaying(true);
+      console.log("CURRENT TRACK: ", currentTrack)
     }
   }, [currentTrack]);
 
@@ -35,7 +36,7 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
         <div className="reproductor__cancion__divisor">
           <img
             className="reproductor__cancion__img"
-            src={currentTrack?.artist.name}
+            src={currentTrack?.md5_image}
           ></img>
 
           <div className="reproductor__cancion__details">

@@ -121,6 +121,7 @@
     align-items: center;
     margin-left: auto;
     gap: 50px;
+    border: 3px solid salmon;
 }
 
 /* Estilos para los resultados de busqueda */
@@ -145,6 +146,7 @@
     border-bottom-left-radius: 19px;
     border-bottom-right-radius: 19px;
     background: #1a1a1a;
+    border: 3px solid blue;
 }
 
 .trak__item__song{
@@ -164,6 +166,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    border: 3px solid rgb(255, 36, 156);
 
 }
 
@@ -174,6 +177,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    border: 3px solid red;
 
 }
 

@@ -13,6 +13,7 @@ export interface Track {
     preview: string,
     duration: number,
     rank: number,
+    md5_image: string;
 }
 
 export interface Album {
