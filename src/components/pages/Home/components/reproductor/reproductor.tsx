@@ -20,6 +20,12 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
     }
   }, [currentTrack]);
 
+  useEffect(() => {
+    if(audioRef.current){
+      audioRef.current.volume = volume;
+    }
+  }, [volume]);
+
   const togglePlay = () => {
     if (!audioRef.current) return;
     if (isPlaying) {
@@ -59,7 +65,8 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
           id="volume"
           type="range"
           min="0"
-          max="20"
+          max="1"
+          step="0.01"
           value={volume}
           onChange={(e) => setVolume(parseFloat(e.target.value))}
         />

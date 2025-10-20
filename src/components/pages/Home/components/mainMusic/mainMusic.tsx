@@ -26,7 +26,7 @@ export default function Home({
       try {
         const response = await fetch("http://localhost:3001/api/albums");
         const data = await response.json();
-        console.log("Albumes: " ,data);
+        console.log("Albumes: ", data);
         setAlbums(data.data);
       } catch (error) {
         console.error(error);
@@ -176,68 +176,64 @@ export default function Home({
             <p>Rank</p>
           </div>
         </div>
-        
+
         <div className="home__container__songs">
           {selectedAlbumTracks.map((song) => (
             <div key={song.id} className="trak__item__song">
               <div className="track__item__song__division__num1">
-              <p>1222</p>
-              <button
-                onClick={() => onPlayTrack(song)}
-                className="carta__album__btn"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
+                <p>1222</p>
+                <button
+                  onClick={() => onPlayTrack(song)}
+                  className="carta__album__btn"
                 >
-                  <path
-                    fill="#fffefe"
-                    fillOpacity="0"
-                    stroke="#fffefe"
-                    strokeDasharray="40"
-                    strokeDashoffset="40"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1.5"
-                    d="M8 6l10 6l-10 6Z"
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
                   >
-                    <animate
-                      fill="freeze"
-                      attributeName="fill-opacity"
-                      begin="0.475s"
-                      dur="0.475s"
-                      values="0;1"
-                    />
-                    <animate
-                      fill="freeze"
-                      attributeName="stroke-dashoffset"
-                      dur="0.475s"
-                      values="40;0"
-                    />
-                  </path>
-                </svg>
-              </button>
-              <img
-                className="track__item__song__img"
-                src={selectedAlbum.cover_small}
-                alt={song.title}
-              ></img>
+                    <path
+                      fill="#fffefe"
+                      fillOpacity="0"
+                      stroke="#fffefe"
+                      strokeDasharray="40"
+                      strokeDashoffset="40"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M8 6l10 6l-10 6Z"
+                    >
+                      <animate
+                        fill="freeze"
+                        attributeName="fill-opacity"
+                        begin="0.475s"
+                        dur="0.475s"
+                        values="0;1"
+                      />
+                      <animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        dur="0.475s"
+                        values="40;0"
+                      />
+                    </path>
+                  </svg>
+                </button>
+                <img
+                  className="track__item__song__img"
+                  src={selectedAlbum.cover_small}
+                  alt={song.title}
+                ></img>
               </div>
-                <div className="track__item__song__division__num2">
-                  <h3>{song.title}</h3>
-                  <p>{selectedAlbum.artist.name}</p>
-                </div>
-                <div className="track__item__duration">
-                  <p className="track__item__album__title">
-                  
-                  </p>
-                  <p className="track__item__song__duration">
-                    
-                  </p>
-                  <p className="track__item__song__rank">{song.rank}</p>
-                </div>
+              <div className="track__item__song__division__num2">
+                <h3>{song.title}</h3>
+                <p>{selectedAlbum.artist.name}</p>
+              </div>
+              <div className="track__item__duration">
+                <p className="track__item__album__title">{selectedAlbum.title}</p>
+                <p className="track__item__song__duration">{song.duration}</p>
+                <p className="track__item__song__rank">{song.rank}</p>
+              </div>
             </div>
           ))}
         </div>

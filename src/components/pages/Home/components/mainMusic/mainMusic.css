@@ -192,7 +192,7 @@
     justify-content: center;
     align-items: center;
     margin-left: auto;
-    
+    border: 3px solid salmon;
 }
 
 .track__item__album__title, 
