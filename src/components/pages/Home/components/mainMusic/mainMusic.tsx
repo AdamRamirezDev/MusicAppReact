@@ -55,7 +55,7 @@ export default function Home({
           </div>
           <div className="order__information__num2">
             <p>Album</p>
-            <p>Duracin</p>
+            <p>Duración</p>
             <p>Rank</p>
           </div>
         </div>
@@ -172,7 +172,7 @@ export default function Home({
           </div>
           <div className="order__information__num2">
             <p>Album</p>
-            <p>Duracion</p>
+            <p>Duración</p>
             <p>Rank</p>
           </div>
         </div>

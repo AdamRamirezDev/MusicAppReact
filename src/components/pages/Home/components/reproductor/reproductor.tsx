@@ -35,7 +35,7 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
     const updateTime = () => setCurrentTime(audio.currentTime);
     const setAudioDuration = () => setDuration(audio.duration);
 
-    audio.addEventListener("timeUpdate", updateTime);
+    audio.addEventListener("timeupdate", updateTime);
     audio.addEventListener("loadedmetada", setAudioDuration);
 
     return () => {
@@ -103,7 +103,7 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
         ></input>
         <div className="reproductor__tiempos">
           <span>{formatTime(currentTime)}</span>
-          <span>{formatTime(currentTime)}</span>
+          <span>{formatTime(duration)}</span>
         </div>
         </div>
       </div>

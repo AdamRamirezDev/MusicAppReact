@@ -87,6 +87,7 @@
 .order__information__num1{
     width: 30%;
     height: 100%;
+  
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -99,7 +100,7 @@
     margin-right: auto;
     margin-left: 10px;
     font-size: 22px;
-    font-weight: 500;
+    font-weight: 100;
     display: flex;
     align-items: center;
 }
@@ -108,7 +109,7 @@
     width: 50%;
     height: 100%;
     font-size: 19px;
-    font-weight: 500;
+    font-weight: 400;
     display: flex;
     align-items: center;
 }
@@ -145,7 +146,6 @@
     border-bottom-left-radius: 19px;
     border-bottom-right-radius: 19px;
     background: #1a1a1a;
-    border: 3px solid blue;
 }
 
 .trak__item__song{
@@ -159,14 +159,12 @@
 }
 
 .track__item__song__division__num1{
-    width: 15%;
+    width: 14%;
     height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    border: 3px solid rgb(255, 36, 156);
-
 }
 
 .track__item__song__division__num2{
@@ -176,8 +174,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    border: 3px solid red;
-
 }
 
 .track__item__song__img{
@@ -191,7 +187,6 @@
     justify-content: center;
     align-items: center;
     margin-left: auto;
-    border: 3px solid salmon;
 }
 
 .track__item__album__title, 
