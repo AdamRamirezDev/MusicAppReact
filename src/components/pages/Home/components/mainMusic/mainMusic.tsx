@@ -8,12 +8,14 @@ interface HomeProps {
   onPlayTrack: (track: Track) => void;
   selectedAlbum: Album | null;
   setSelectedAlbum: (album: Album | null) => void;
+  onSetPlaylist: (tracks: Track[]) => void;
 }
 
 export default function Home({
   searchResults,
   isSearching,
   onPlayTrack,
+  onSetPlaylist
 }: HomeProps) {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [loading, setLoading] = useState(true);
@@ -142,6 +144,7 @@ export default function Home({
       const data = await response.json();
       console.log("Funcion hanlde, esta es la info: ", data);
       setSelectedAlbumTracks(data.data);
+      onSetPlaylist(data.data);
     } catch (error) {
       console.error("Error al cargar las canciones del album", error);
     }

@@ -4,15 +4,19 @@ import type { Track } from "../../../../../types/deezerTypes";
 
 export interface ReproductorProps {
   currentTrack: Track | null;
+  playlist: Track[],
 }
 
-export default function Reproductor({ currentTrack }: ReproductorProps) {
+export default function Reproductor({ currentTrack, playlist }: ReproductorProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.5);
   const [currentTime, setCurrentTime] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
+
+  //console.log(playlist)
 
   //Cambio de cancion
   useEffect(() => {
@@ -47,6 +51,14 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
     }
   }, []);
 
+  // Cambio de cancion con next y back
+  useEffect(() => {
+    if (playlist && currentTrack){
+      const index = playlist.findIndex(t => t.id === currentTrack.id);
+      setCurrentIndex(index);
+    }
+  }, [currentTrack, playlist])
+
   // Formateo de segundos y minutos
   const formatTime = (time: number) => {
     if(isNaN(time)) return "0.00";
@@ -62,7 +74,7 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
       audioRef.current.currentTime = newTime;
       setProgress(newTime);
     }
-  }
+  };
 
   // Boton de play y pause
   const togglePlay = () => {
@@ -73,6 +85,24 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
       audioRef.current.play();
     }
     setIsPlaying(!isPlaying);
+  };
+
+  //Boton de next
+  const handleNext = () => {
+    if (!currentTrack || playlist.length === 0) return;
+    const currentIndex = playlist.findIndex(t => t.id === currentTrack.id);
+    const nextIndex = (currentIndex + 1) % playlist.length;
+    console.log("SI LLEGA AQUI")
+    console.log(currentIndex, nextIndex)
+    togglePlay(playlist[nextIndex]);
+  };
+
+  //Boton de back
+  const handleBack = () => {
+    if(!currentTrack || playlist.length === 0) return;
+    const currentIndex = playlist.findIndex(t => t.id === currentTrack.id)
+    const backIndex = (currentIndex - 1) % playlist.length;
+    togglePlay(playlist[backIndex])
   };
 
   return (
@@ -89,7 +119,10 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
       {/* Botones y barra de progreso*/}
       <div className="reproductor__container__controles">
         <div className="reproductor__container__controles__division">
-          <button className="reproductor__next">
+          <button 
+            className="reproductor__back"
+            onClick={handleBack}
+            >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32"><path fill="#ffffffff" d="M27 28a1 1 0 0 1-.501-.135l-19-11a1 1 0 0 1 0-1.73l19-11A1 1 0 0 1 28 5v22a1 1 0 0 1-1 1M2 4h2v24H2z"/></svg>
           </button>
           <button className="reproductor__btn" onClick={togglePlay}>{isPlaying ? 
@@ -98,7 +131,10 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
             }
             </button>
           <audio ref={audioRef} />
-          <button className="reproductor__back">
+          <button 
+            className="reproductor__next"
+            onClick={handleNext}
+            >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32"><path fill="#ffffffff" d="M26.002 5a1 1 0 1 1 2 0v22a1 1 0 0 1-2 0zM3.999 6.504c0-2.002 2.236-3.192 3.897-2.073l14.003 9.432A2.5 2.5 0 0 1 21.912 18L7.909 27.56c-1.66 1.132-3.91-.056-3.91-2.065z"/></svg>
           </button>
         </div>

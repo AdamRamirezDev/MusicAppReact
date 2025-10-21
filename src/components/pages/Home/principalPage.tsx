@@ -7,15 +7,29 @@ import type { Track, Album } from "../../../types/deezerTypes";
 export default function PrincipalPage() {
   const [searchResults, setSearchResults] = useState<Track[]>([]);
   const [isSearching, setIsSearching] = useState<true | false>(false);
-  const [currentTrack, setCurrentTrack] = useState<Track[] | null>(null);
+  const [currentTrack, setCurrentTrack] = useState<Track | null>(null);
   const [selectedAlbum, setSelectedAlbum] = useState<Album | null>(null);
+  const [playlist, setPlaylist] = useState<Track[]>([]);
 
-  //Funcion que resetea y regresa al Main
+  //Funcion que regresa al inicio
   function resetToMain(){
     setIsSearching(false);
     setSelectedAlbum(null);
     setCurrentTrack(null);
   }
+
+  //Funcion que recibe la playlist de mainMusic
+  function handleSetPlaylist(tracks: Track[]){
+    console.log(playlist)
+    setPlaylist(tracks);
+    console.log(playlist)
+  }
+
+  useEffect(() => {
+    if(searchResults.length > 0){
+      setPlaylist(searchResults);
+    }
+  }, [searchResults]);
 
   return (
     <div className="principal__container">
@@ -34,12 +48,17 @@ export default function PrincipalPage() {
             onPlayTrack={setCurrentTrack}
             selectedAlbum={selectedAlbum}
             setSelectedAlbum={setSelectedAlbum}
+            onSetPlayList={handleSetPlaylist}
           />
         </div>
       </div>
       <div className="division__reproductor">
         {/*Componente de reproduccion*/}
-        <Reproductor currentTrack={currentTrack} />
+        <Reproductor 
+          currentTrack={currentTrack} 
+          playlist={playlist}
+          onChangeTrack={setCurrentTrack}
+        />
       </div>
     </div>
   );
