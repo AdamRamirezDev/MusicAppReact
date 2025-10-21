@@ -47,8 +47,27 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid red;
+}
+
+.reproductor__container__controles__division{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 5px 5px;
+    gap: 40px;
+    border: 2px solid blue;
+}
+
+.reproductor__back, .reproductor__next{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .reproductor__btn{
@@ -69,7 +88,9 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     gap: 20px;
+    border: 2px solid green;
 }
 
 .barra__progreso{

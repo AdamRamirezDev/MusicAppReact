@@ -52,7 +52,7 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
     if(isNaN(time)) return "0.00";
     const minutos = Math.floor(time / 60);
     const seconds = Math.floor(time % 60).toString().padStart(2, "0");
-    return `${minutos}: ${seconds}`;
+    return `${minutos}:${seconds}`;
   };
 
   //Funcion que te permite cambiar manualmente el progreso
@@ -88,13 +88,22 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
       </div>
       {/* Botones y barra de progreso*/}
       <div className="reproductor__container__controles">
-        <button className="reproductor__btn" onClick={togglePlay}>{isPlaying ? 
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000000ff" d="M16 19q-.825 0-1.412-.587T14 17V7q0-.825.588-1.412T16 5t1.413.588T18 7v10q0 .825-.587 1.413T16 19m-8 0q-.825 0-1.412-.587T6 17V7q0-.825.588-1.412T8 5t1.413.588T10 7v10q0 .825-.587 1.413T8 19"/></svg> : 
-        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24"><path fill="#000000ff" fillOpacity="0" stroke="#fffefe" strokeDasharray="40" strokeDashoffset="40" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 6l10 6l-10 6Z"><animate fill="freeze" attributeName="fill-opacity" begin="0.475s" dur="0.475s" values="0;1"/><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.475s" values="40;0"/></path></svg>
-          }
+        <div className="reproductor__container__controles__division">
+          <button className="reproductor__next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32"><path fill="#ffffffff" d="M27 28a1 1 0 0 1-.501-.135l-19-11a1 1 0 0 1 0-1.73l19-11A1 1 0 0 1 28 5v22a1 1 0 0 1-1 1M2 4h2v24H2z"/></svg>
           </button>
-        <audio ref={audioRef} />
+          <button className="reproductor__btn" onClick={togglePlay}>{isPlaying ? 
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000000ff" d="M16 19q-.825 0-1.412-.587T14 17V7q0-.825.588-1.412T16 5t1.413.588T18 7v10q0 .825-.587 1.413T16 19m-8 0q-.825 0-1.412-.587T6 17V7q0-.825.588-1.412T8 5t1.413.588T10 7v10q0 .825-.587 1.413T8 19"/></svg> : 
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24"><path fill="#000000ff" fillOpacity="0" stroke="#fffefe" strokeDasharray="40" strokeDashoffset="40" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 6l10 6l-10 6Z"><animate fill="freeze" attributeName="fill-opacity" begin="0.475s" dur="0.475s" values="0;1"/><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.475s" values="40;0"/></path></svg>
+            }
+            </button>
+          <audio ref={audioRef} />
+          <button className="reproductor__back">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32"><path fill="#ffffffff" d="M26.002 5a1 1 0 1 1 2 0v22a1 1 0 0 1-2 0zM3.999 6.504c0-2.002 2.236-3.192 3.897-2.073l14.003 9.432A2.5 2.5 0 0 1 21.912 18L7.909 27.56c-1.66 1.132-3.91-.056-3.91-2.065z"/></svg>
+          </button>
+        </div>
         <div className="reproductor__container__barraProgreso">
+        <span>{formatTime(currentTime)}</span>
         <input
             className="barra__progreso"
             type="range"
@@ -105,7 +114,6 @@ export default function Reproductor({ currentTrack }: ReproductorProps) {
             onChange={handleSeek}
         ></input>
         <div className="reproductor__tiempos">
-          <span>{formatTime(currentTime)}</span>
           <span>{formatTime(duration)}</span>
         </div>
         </div>
