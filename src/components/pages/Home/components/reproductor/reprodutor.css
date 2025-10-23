@@ -147,3 +147,19 @@
     }
 }
 
+/* Media queries para pantallas chicas de escritorio*/
+@media (max-width: 1024px) and (min-height: 600px){
+    .reproductor__container{
+        height: 100%;
+        border: 5px solid salmon
+    }
+
+    .division__reproductor{
+        
+        border: 2px solid red;
+    }
+
+    .reproductor__container__cancion{
+        border: 1px solid blue;
+    }
+}
