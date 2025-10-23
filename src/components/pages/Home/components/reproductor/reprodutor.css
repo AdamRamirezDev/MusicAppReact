@@ -18,17 +18,17 @@
 
 /* Reproductor parte izquierda */
 .reproductor__container__cancion{
-    width: 30%;
-    height: 100%;
+    width: 33%;
+    height: 90%;
 }
 
 .reproductor__cancion__divisor{
-    width: 60%;
+    width: 100%;
     height: 100%;
-    margin-left: 30px;
     display: flex;
     justify-content: left;
-    align-items:flex-start;
+    align-items: center;
+    padding-left: 22px;
 }
 
 .reproductor__cancion__artista{
@@ -41,15 +41,18 @@
     text-align: left;
 }
 
+.reproductor__cancion__title{
+    font-size: 18px;
+    font-weight: 500;
+}
 /* Reproductor controles de play y pausa */
 .reproductor__container__controles{
-    width: 40%;
+    width: 45%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    border: 1px solid red;
 }
 
 .reproductor__container__controles__division{
@@ -59,9 +62,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 5px 5px;
+    margin: 4px 0px;
     gap: 40px;
-    border: 2px solid blue;
 }
 
 .reproductor__back, .reproductor__next{
@@ -91,7 +93,6 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    border: 2px solid green;
 }
 
 .barra__progreso{
@@ -113,6 +114,36 @@
 
 }
 
+/* --------------Media quieres------------ */
+@media (max-width: 900px){
+    .division__reproductor{
+        border: 3px solid blue;
+    }
 
+    .reproductor__container__cancion{
+        border: 2px solid red;
+    }
+    .reproductor__cancion__divisor{
+        height: 100%;
+        padding-left: 3px;
+        border: 3px solid salmon;
+    }
+    .reproductor__cancion__title{
+        font-size: 17px;
+        
+    }
 
+    /* Controles*/
+    .reproductor__container__controles{
+        border: 3px solid salmon;
+        align-items: center;
+        justify-content: center;
+    }
+    .reproductor__container__controles__division{
+        border: 2px solid red;
+    }
+    .reproductor__container__barraProgreso{
+        border: 2px solid green;
+    }
+}
 

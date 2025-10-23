@@ -48,7 +48,7 @@ export default function PrincipalPage() {
             onPlayTrack={setCurrentTrack}
             selectedAlbum={selectedAlbum}
             setSelectedAlbum={setSelectedAlbum}
-            onSetPlayList={handleSetPlaylist}
+            onSetPlaylist={handleSetPlaylist}
           />
         </div>
       </div>

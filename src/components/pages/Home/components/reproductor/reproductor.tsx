@@ -5,9 +5,10 @@ import type { Track } from "../../../../../types/deezerTypes";
 export interface ReproductorProps {
   currentTrack: Track | null;
   playlist: Track[],
+  onChangeTrack: (track: Track) => void;
 }
 
-export default function Reproductor({ currentTrack, playlist }: ReproductorProps) {
+export default function Reproductor({ currentTrack, playlist, onChangeTrack }: ReproductorProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.5);
@@ -89,12 +90,12 @@ export default function Reproductor({ currentTrack, playlist }: ReproductorProps
 
   //Boton de next
   const handleNext = () => {
+    console.log(playlist)
     if (!currentTrack || playlist.length === 0) return;
     const currentIndex = playlist.findIndex(t => t.id === currentTrack.id);
     const nextIndex = (currentIndex + 1) % playlist.length;
-    console.log("SI LLEGA AQUI")
-    console.log(currentIndex, nextIndex)
-    togglePlay(playlist[nextIndex]);
+    const nextTrack = playlist[nextIndex];
+    onChangeTrack(nextTrack);
   };
 
   //Boton de back
@@ -102,7 +103,8 @@ export default function Reproductor({ currentTrack, playlist }: ReproductorProps
     if(!currentTrack || playlist.length === 0) return;
     const currentIndex = playlist.findIndex(t => t.id === currentTrack.id)
     const backIndex = (currentIndex - 1) % playlist.length;
-    togglePlay(playlist[backIndex])
+    const prevTrack = playlist[backIndex]
+    onChangeTrack(prevTrack);
   };
 
   return (
@@ -111,7 +113,7 @@ export default function Reproductor({ currentTrack, playlist }: ReproductorProps
       <div className="reproductor__container__cancion">
         <div className="reproductor__cancion__divisor">
           <div className="reproductor__cancion__details">
-            <h2>{currentTrack?.title}</h2>
+            <p className="reproductor__cancion__title">{currentTrack?.title}</p>
             <p className="reproductor__cancion__artista">{currentTrack?.artist.name}</p>
           </div>
         </div>

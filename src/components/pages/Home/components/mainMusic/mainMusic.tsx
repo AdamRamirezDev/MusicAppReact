@@ -186,7 +186,10 @@ export default function Home({
               <div className="track__item__song__division__num1">
                 <p>1222</p>
                 <button
-                  onClick={() => onPlayTrack(song)}
+                  onClick={() => {
+                    onPlayTrack(song)
+                    onSetPlaylist(selectedAlbumTracks)
+                  }}
                   className="carta__album__btn"
                 >
                   <svg
@@ -272,3 +275,4 @@ export default function Home({
     </div>
   );
 }
+
