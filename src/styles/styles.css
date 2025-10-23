@@ -18,23 +18,11 @@
 }
 
 
-@media (max-width: 1024px) and (min-height: 1366px){
-
-    .division__container{
-        border: 5px solid rgb(3, 250, 40);
-        height: 100%;
-    }
-
-    .division{
-        border: 10px solid salmon;
-    }
-}
-
 /* Media queries para pantallas chicas de escritorio*/
 @media (max-width: 1024px) and (min-height: 600px){
 
     .division{
-       height: 100%;
+       height: 98%;
     }
 
     .division__container{
@@ -43,7 +31,19 @@
     }
 }
 
-@media (max-width: 900px){
+@media (max-width: 1024px) and (min-height: 1367px){
+
+    .division__container{
+        border: 2px solid rgb(3, 250, 40);
+        height: 90%;
+    }
+
+    .division{
+        border: 10px solid salmon;
+    }
+}
+
+@media (max-width: 920px){
 
     .division__container{
         height: 90%;

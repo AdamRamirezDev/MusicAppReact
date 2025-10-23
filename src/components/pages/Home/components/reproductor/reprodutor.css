@@ -114,19 +114,32 @@
 
 }
 
-/* --------------Media quieres------------ */
-@media (max-width: 900px){
+
+/* Media queries para pantallas chicas de escritorio*/
+@media (max-width: 1024px) and (min-height: 600px){
+    .reproductor__container{
+        height: 100%;
+        border: 5px solid salmon
+    }
+
     .division__reproductor{
-        border: 3px solid blue;
+        border: 1px solid red;
     }
 
     .reproductor__container__cancion{
-        border: 2px solid red;
+        border: 1px solid blue;
+    }
+}
+
+/* --------------Media quieres------------ */
+@media (max-width: 900px){
+
+    .reproductor__container__cancion{
+        border: 5px solid red;
     }
     .reproductor__cancion__divisor{
         height: 100%;
         padding-left: 3px;
-        border: 3px solid salmon;
     }
     .reproductor__cancion__title{
         font-size: 17px;
@@ -144,22 +157,5 @@
     }
     .reproductor__container__barraProgreso{
         border: 2px solid green;
-    }
-}
-
-/* Media queries para pantallas chicas de escritorio*/
-@media (max-width: 1024px) and (min-height: 600px){
-    .reproductor__container{
-        height: 100%;
-        border: 5px solid salmon
-    }
-
-    .division__reproductor{
-        
-        border: 2px solid red;
-    }
-
-    .reproductor__container__cancion{
-        border: 1px solid blue;
     }
 }
