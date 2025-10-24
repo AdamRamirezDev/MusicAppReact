@@ -359,7 +359,9 @@
     .track__item__song__division__num1{
         width: 22%;
     }
-
+    .track__item__album__title{
+        font-size: 12px;
+    }
     .home__divisor__album{
         height: 30%;
     }
@@ -368,3 +370,20 @@
     }
 }
 
+@media(max-width: 475px){
+
+    .home__container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .carta__album{
+        width: 100px;
+        height: 200px;
+        border: 2px solid red;
+    }
+    .carta__album__img{
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+    }
+
+}

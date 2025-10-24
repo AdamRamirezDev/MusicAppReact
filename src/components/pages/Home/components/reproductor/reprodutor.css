@@ -146,3 +146,15 @@
         justify-content: center;
     }
 }
+
+@media (max-width: 475px){
+
+    .reproductor__container{
+        border: 2px solid red;
+    }
+
+    .reproductor__container__volumen{
+        display: none;
+    }
+
+}

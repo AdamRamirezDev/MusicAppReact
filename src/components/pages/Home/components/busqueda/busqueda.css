@@ -31,23 +31,26 @@
     border: none;
 }
 
+@media (max-width: 1024px) and (max-height: 1366px){
+
+    .busqueda__container{
+        max-height: 150px;
+        border: 3px solid salmon;
+    }
+    .input__busqueda{
+        width: 700px;
+        height: 70px;
+    }
+    /* Icono tambien */
+}
+
 /* Media queries para pantallas chicas de escritorio*/
-@media (max-width: 1024px) and (min-height: 600px){
+@media (max-width: 1024px) and (max-height: 600px){
 
     .busqueda__container{
         height: 18%;
     }
 
-}
-
-@media (max-width: 1024px) and (min-height: 1366px){
-
-    .busqueda__container{
-        max-height: 150px;
-    }
-    .input__busqueda{
-        width: 600px;
-    }
 }
 
 @media (max-width: 920px){
