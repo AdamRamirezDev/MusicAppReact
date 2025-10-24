@@ -119,27 +119,21 @@
 @media (max-width: 1024px) and (min-height: 600px){
     .reproductor__container{
         height: 100%;
-        border: 5px solid salmon
+        align-items: center;
     }
 
-    .division__reproductor{
-        border: 1px solid red;
-    }
-
-    .reproductor__container__cancion{
-        border: 1px solid blue;
+    .reproductor__container__controles{
+        padding-top: 10px;
     }
 }
 
 /* --------------Media quieres------------ */
 @media (max-width: 900px){
 
-    .reproductor__container__cancion{
-        border: 5px solid red;
-    }
     .reproductor__cancion__divisor{
         height: 100%;
         padding-left: 3px;
+        border: 1px solid red;
     }
     .reproductor__cancion__title{
         font-size: 17px;
@@ -148,14 +142,7 @@
 
     /* Controles*/
     .reproductor__container__controles{
-        border: 3px solid salmon;
         align-items: center;
         justify-content: center;
-    }
-    .reproductor__container__controles__division{
-        border: 2px solid red;
-    }
-    .reproductor__container__barraProgreso{
-        border: 2px solid green;
     }
 }

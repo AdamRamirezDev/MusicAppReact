@@ -86,7 +86,7 @@
 .order__information__num1{
     width: 30%;
     height: 100%;
-  
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -107,7 +107,7 @@
 .order__information__title{
     width: 50%;
     height: 100%;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 400;
     display: flex;
     align-items: center;
@@ -120,7 +120,7 @@
     justify-content: space-evenly;
     align-items: center;
     margin-left: auto;
-    gap: 40px;
+    gap: 45px;
 }
 
 /* Estilos para los resultados de busqueda */
@@ -173,6 +173,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    padding-left: 10px;
 }
 
 .track__item__song__img{
@@ -287,8 +288,39 @@
     }
     .home__container__design{
         height: 80%;
-        border: 3px solid rgb(7, 248, 3);
     }
+    .order__information__num1{
+        width: 32%;
+    }
+    .home__container__order{
+        width: 98%;
+        padding: 0px;
+    }
+    .home__album__img{
+        width: 150px;
+    }
+    .home__album__titulo{
+        font-size: 27px;
+    }
+    .track__item__song__division__num1{
+        width: 15%;
+        font-size: 14px;
+    }
+    .track__item__song__division__num2{
+        width: 36%;
+        font-size: 14px;
+        padding-left: 10px;
+    }
+    .track__item__song__img{
+        width: 50px;
+    }
+    .track__item__album__title, 
+    .track__item__song__duration, 
+    .track__item__song__rank{
+        width: 40%;
+        font-size: 14px;
+    }
+
 }
 
 @media (max-width: 1024px) and (min-height: 1366px){
@@ -296,16 +328,43 @@
     .home__container__design{
         height: 85%;
     }
+    .home__divisor__album{
+        height: 30%;
+    }
+    .home__container__order{
+        width: 98%;
+    }
+    .home__album__img{
+        width: 25%;
+    }
 
 }
 
 @media (max-width: 920px){
 
     .home__container{
-        border: 2px solid salmon;
         grid-template-columns: repeat(3, 1fr);
         gap: 10px 20px;
     }
+    .home__container__order{
+        width: 98%;
+    }
+    .order__information__num1{
+        width: 43%;
+        padding-left: 20px;
+    }
+    .order__information__num2{
+        gap: 3px;
+    }
+    .track__item__song__division__num1{
+        width: 22%;
+    }
 
+    .home__divisor__album{
+        height: 30%;
+    }
+    .home__album__titulo{
+        font-size: 30px;
+    }
 }
 
