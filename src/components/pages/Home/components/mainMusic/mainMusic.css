@@ -236,7 +236,7 @@
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     background: #002b2b;
-    background: linear-gradient(180deg, rgba(0, 43, 43, 1) 0%, rgba(0, 75, 77, 1) 17%, rgba(0, 125, 128, 1) 56%, rgba(92, 247, 255, 1) 100%);
+    background: linear-gradient(0deg, rgba(0, 43, 43, 1) 0%, rgba(0, 75, 77, 1) 17%, rgba(0, 125, 128, 1) 56%, rgba(92, 247, 255, 1) 100%);
 }
 
 .home__album__img{
@@ -373,17 +373,79 @@
 @media(max-width: 475px){
 
     .home__container{
-        grid-template-columns: repeat(3, 1fr);
+        border: 5px solid blue;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0px;
+    }
+
+    .home__container__divisor{
+        padding: 10px 10px;
+        max-height: 90px;
+    }
+    .home__container__titulo{
+        font-size: 30px;
+    }
+
+    .home__container__design{
+        width: 94%;
+        height: 89%;
+        border: 3px solid red;
+    }
+
+    /* Estilos de las canciones */
+    .home__container__order{
+        display: none;
+    }
+    .track__item__number{
+        display: none;
+    }
+    .track__item__song__division__num1{
+        width: 30%;
+        border: 3px solid salmon;
+    }
+    .track__item__song__division__num2{
+        width: 70%;
+        border: 3px solid green;
+    }
+
+    .order__information__num2{
+        display: none;
+    }
+    .track__item__duration{
+        display: none;
+    }
+
+    /* Estilos del album*/
+    .home__divisor__album{
+        height: 52%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .home__album__img{
+        width: 50%;
+    }
+    .home__album__principal__information{
+        width: 88%;
+    }
+    .home__album__titulo{
+        font-size: 20px;
     }
     .carta__album{
-        width: 100px;
-        height: 200px;
-        border: 2px solid red;
+        width: 170px;
+        height: 250px;
     }
     .carta__album__img{
-        width: 100px;
-        height: 100px;
-        border-radius: 10px;
+        width: 150px;
+        height: 150px;
+        border-radius: 8px;
     }
+    .carta__album__titulo{
+        font-size: 15px;
+    }
+    .carta__album__description{
+        font-size: 12px;
+    }
+    
 
 }

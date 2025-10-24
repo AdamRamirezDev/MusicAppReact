@@ -35,7 +35,6 @@
 
     .busqueda__container{
         max-height: 150px;
-        border: 3px solid salmon;
     }
     .input__busqueda{
         width: 700px;
@@ -58,9 +57,30 @@
     .busqueda__container{
         height: 100%;
         max-height: 120px;
-        border: 5px solid greenyellow;
     }
     .input__busqueda{
         width: 600px;
     }
+}
+
+@media(max-width: 475px){
+
+    .busqueda__container{
+        height: 10%;
+    }
+
+    .back__btn{
+        width: 60px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: rgb(69, 69, 69);
+    }
+
+    .input__busqueda{
+        width: 78%;
+        height: 50px;
+        border-radius: 8px;
+        background-color: white;
+    }
+
 }

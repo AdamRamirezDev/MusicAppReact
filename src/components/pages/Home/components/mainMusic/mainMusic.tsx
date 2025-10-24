@@ -68,7 +68,7 @@ export default function Home({
             return (
               <div className="trak__item__song" key={track.id}>
                 <div className="track__item__song__division__num1">
-                  <p>1222</p>
+                  <p className="track__item__number">1222</p>
                   <button
                     onClick={() => onPlayTrack(track)}
                     className="carta__album__btn"

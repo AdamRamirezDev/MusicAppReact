@@ -46,3 +46,14 @@
         height: 90%;
     }
 }
+
+@media(max-width: 475px){
+
+    .division__container{
+        border: 2px solid blue;
+    }
+
+    .division{
+        border: 1px solid greenyellow;
+    }
+}
