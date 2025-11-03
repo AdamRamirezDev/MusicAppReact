@@ -15,7 +15,6 @@ export default function PrincipalPage() {
   function resetToMain(){
     setIsSearching(false);
     setSelectedAlbum(null);
-    setCurrentTrack(null);
   }
 
   //Funcion que recibe la playlist de mainMusic

@@ -17,7 +17,6 @@ export default function Reproductor({ currentTrack, playlist, onChangeTrack }: R
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  //console.log(playlist)
 
   //Cambio de cancion
   useEffect(() => {
