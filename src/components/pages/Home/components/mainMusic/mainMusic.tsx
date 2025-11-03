@@ -6,22 +6,23 @@ interface HomeProps {
   searchResults: Track[];
   isSearching: boolean;
   onPlayTrack: (track: Track) => void;
+  onSetPlaylist: (tracks: Track[]) => void;
   selectedAlbum: Album | null;
   setSelectedAlbum: (album: Album | null) => void;
-  onSetPlaylist: (tracks: Track[]) => void;
 }
 
 export default function Home({
   searchResults,
   isSearching,
   onPlayTrack,
-  onSetPlaylist
+  onSetPlaylist,
+  selectedAlbum,
+  setSelectedAlbum
 }: HomeProps) {
   const [albums, setAlbums] = useState<Album[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<true | false>(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedAlbumTracks, setSelectedAlbumTracks] = useState<Track[]>([]);
-  const [selectedAlbum, setSelectedAlbum] = useState<Album | null>(null);
 
   useEffect(() => {
     const fetchAlbums = async () => {
@@ -138,6 +139,7 @@ export default function Home({
     try {
       console.log("Album ID recibido: ", album.id);
       setSelectedAlbum(album);
+      console.log("Album seleccionado desde main: ", album);
       const response = await fetch(
         `http://localhost:3001/api/album/${album.id}/tracks`
       );

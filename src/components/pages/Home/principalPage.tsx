@@ -46,8 +46,8 @@ export default function PrincipalPage() {
             searchResults={searchResults} 
             isSearching={isSearching} 
             onPlayTrack={setCurrentTrack}
-            selectedAlbum={selectedAlbum}
             setSelectedAlbum={setSelectedAlbum}
+            selectedAlbum={selectedAlbum}
             onSetPlaylist={handleSetPlaylist}
           />
         </div>

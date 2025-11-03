@@ -9,11 +9,12 @@ interface BusquedaProps {
   resetToMain: () => void;
 }
 
-export default function Busqueda({ setSearchResults, setIsSearching, resetToMain }: BusquedaProps) {
+export default function Busqueda({ setSearchResults, setIsSearching,resetToMain }: BusquedaProps) {
     
     const [query, setQuery] = React.useState("");
     const { tracks, searchSongs } = BusquedaDeezer();
 
+    //Funcion que mostrar los resultados
     const handleKeyDown = (e: React.KeyboardEvent) => {
       if(e.key === "Enter"){
         e.preventDefault();
@@ -23,8 +24,10 @@ export default function Busqueda({ setSearchResults, setIsSearching, resetToMain
       }  
     }
 
+    // Funcion para regresar al inicio
     function handleClick(){
       resetToMain();
+      
     }
 
     useEffect(() => {

@@ -10,9 +10,9 @@ export interface ReproductorProps {
 
 export default function Reproductor({ currentTrack, playlist, onChangeTrack }: ReproductorProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.5);
-  const [currentTime, setCurrentTime] = useState(0);
+  const [isPlaying, setIsPlaying] = useState<true | false>(false);
+  const [volume, setVolume] = useState<number>(0.5);
+  const [currentTime, setCurrentTime] = useState<number>(0);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
