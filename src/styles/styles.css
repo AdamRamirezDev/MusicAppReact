@@ -50,6 +50,7 @@
 @media(max-width: 475px){
 
     .division__container{
+        height: 86%;
         border: 2px solid blue;
     }
 

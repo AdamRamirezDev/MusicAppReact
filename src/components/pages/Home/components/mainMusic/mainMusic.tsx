@@ -184,7 +184,7 @@ export default function Home({
           {selectedAlbumTracks.map((song) => (
             <div key={song.id} className="trak__item__song">
               <div className="track__item__song__division__num1">
-                <p>1222</p>
+                <p className="track__item__number">1222</p>
                 <button
                   onClick={() => {
                     onPlayTrack(song)

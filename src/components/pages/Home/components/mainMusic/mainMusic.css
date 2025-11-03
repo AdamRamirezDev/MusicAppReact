@@ -15,8 +15,8 @@
     scrollbar-width: none;
     border-radius: 18px;
     margin: auto;
-    background: #212121;
-    background: linear-gradient(180deg, rgba(33, 33, 33, 1) 0%, rgba(59, 59, 59, 1) 49%, rgba(81, 81, 81, 1) 69%, rgba(115, 115, 115, 1) 100%);
+    background: #111111;
+    background: linear-gradient(180deg, rgba(33, 33, 33, 1) 0%, rgb(39, 39, 39) 49%, rgb(36, 36, 36) 69%, rgb(20, 20, 20) 100%);
 }
 
 .home__container__divisor{
@@ -373,7 +373,6 @@
 @media(max-width: 475px){
 
     .home__container{
-        border: 5px solid blue;
         grid-template-columns: repeat(2, 1fr);
         padding: 0px;
     }
@@ -389,7 +388,6 @@
     .home__container__design{
         width: 94%;
         height: 89%;
-        border: 3px solid red;
     }
 
     /* Estilos de las canciones */
@@ -401,11 +399,9 @@
     }
     .track__item__song__division__num1{
         width: 30%;
-        border: 3px solid salmon;
     }
     .track__item__song__division__num2{
         width: 70%;
-        border: 3px solid green;
     }
 
     .order__information__num2{
