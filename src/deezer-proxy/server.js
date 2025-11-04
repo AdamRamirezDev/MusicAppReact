@@ -50,9 +50,17 @@ app.get("/api/tracks", async (req, res) => {
     }
 });
 
+//Endpoint para obtener las playlists populares
+app.get("/api/playlists", async (req, res)=> {
 
-//Endpoint para obtener los artistas populares
-
+    try {
+        const response = await fetch("https://api.deezer.com/chart/0/playlists?limit=10");
+        const data = await response.json();
+        res.json(data);
+    } catch(error){
+        res.status(500).json({error: "Error al obtener playlist populares"});
+    }
+});
 
 //Endpoint para obtener las canciones de un album
 app.get("/api/album/:id/tracks", async (req, res) => {

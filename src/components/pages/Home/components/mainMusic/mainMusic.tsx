@@ -25,6 +25,7 @@ export default function Home({
   const [error, setError] = useState<string | null>(null);
   const [selectedAlbumTracks, setSelectedAlbumTracks] = useState<Track[]>([]);
   const [topTracks, setTopTracks] = useState<Track[]>([]);
+  const [playLists, setPlayLists] = useState<Album[]>([]);
 
   // Fetch de la ventana principal (albumes, artistas y canciones mas escuchadas)
   useEffect(() => {
@@ -39,6 +40,11 @@ export default function Home({
         const resTracks = await fetch("http://localhost:3001/api/tracks");
         const dataTracks = await resTracks.json();
         setTopTracks(dataTracks.data);
+
+        //PlayLists mas escuchadas
+        const resPlaylists = await fetch("http://localhost:3001/api/playlists");
+        const dataPlaylists = await resPlaylists.json();
+        setPlayLists(dataPlaylists.data);
 
         console.log("Albumes: ", dataAlbumes);
         console.log("Canciones: ", dataTracks);
@@ -272,7 +278,7 @@ export default function Home({
           Lo estan rompiendo en America Latina
         </p>
       </div>
-      {/* Albumes */}
+      {/* Albumes mas populares */}
       <div className="home__container">
         <Carousel>
           {albums.map((album) => (
@@ -290,23 +296,6 @@ export default function Home({
             </div>
           ))}
         </Carousel>
-
-        {/* importacion del carrusel 
-        {albums.map((album) => (
-          <div className="carta__album">
-            <div key={album.id}>
-              <img
-                src={album.cover_medium}
-                alt={album.title}
-                onClick={() => handleAlbumClick(album)}
-                className="carta__album__img"
-              ></img>
-              <h3 className="carta__album__titulo">{album.title}</h3>
-              <p className="carta__album__description">{album.artist.name}</p>
-            </div>
-          </div>
-        ))}
-        */}
       </div>
       <div className="home__container__divisor">
         <p className="home__container__text">
@@ -316,11 +305,44 @@ export default function Home({
       </div>
       {/* Canciones mas escuchadas */}
       <div className="home__container">
-        {topTracks.map((track) => (
-          <div className="carta__song">
-            <div key={track.id}></div>
-          </div>
-        ))}
+        <Carousel>
+          {topTracks.map((track) => (
+            <div className="carta__song">
+              <div key={track.id}>
+                <img
+                  src={track.album.cover_medium}
+                  alt={track.title}
+                  className="carta__song__img"
+                ></img>
+                <h3 className="carta__song__titulo">{track.title}</h3>
+                <p className="carta__song__description">{track.artist.name}</p>
+              </div>
+            </div>
+          ))}
+        </Carousel>
+      </div>
+      <div className="home__container__divisor">
+        <p className="home__container__titulo">Estas playlist estan duras</p>
+        <p className="home__container__text">
+          Escucha estas playlist que estan sonando mucho
+        </p>
+      </div>
+      {/* Playlist mas escuchadas */}
+      <div className="home__container">
+          <Carousel>
+            {playLists.map((playlist) => {
+              <div className="carta__album" key={playlist.id}>
+                <div key={playlist.id}>
+                  <img
+                    src={playlist.cover_medium}
+                    alt={playlist.title}
+                    className="carta__album__img"
+                  ></img>
+                  <h3 className="carta__album__titulo">{playlist.title}</h3>
+                </div>
+              </div>;
+            })}
+          </Carousel>
       </div>
     </div>
   );

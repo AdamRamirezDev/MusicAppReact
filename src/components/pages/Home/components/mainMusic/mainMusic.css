@@ -2,7 +2,7 @@
 /* Estilo de Home */ 
 .home__container{
     width: 99%;
-    height: 315px;
+    height: 300px;
     padding: 10px;
     border: 5px solid rgb(234, 31, 187);
 }
@@ -21,55 +21,84 @@
 
 .home__container__divisor{
     width: 99%;
-    height: 120px;
+    height: 80px;
     max-height: 120px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding:  5px 20px; 
+    padding:  6px 20px; 
     border: 1px solid blue;   
 }
 
 .home__container__titulo{
-    font-size: 40px;
+    font-size: 30px;
     color: white;
     font-weight: 500;
 }
 
 .home__container__text{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 200;
     border: 1px solid red;
 }
 
-/* Estilos para las cartas de los albums */
-
-.carta__album{
+/* Estilos para las cartas de los albums y canciones (Tienen el mismo estilo) */
+.carta__album, .carta__song{
     width: 160px;
     height: 300px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin: auto;
     cursor: pointer;
     border: 1px solid blue;
 }
 
-.carta__album__img{
-    width: 160px;
-    height: 160px;
-    border-radius: 22px;
+.carta__album{
+    display: flex;
+    flex-direction: column;
 }
 
-.carta__album__titulo{
+.carta__album__img, .carta__song__img{
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+}
+
+.carta__album__titulo, .carta__song__titulo{
     font-size: 15px;
+    padding-top: 5px;
     font-weight: 600;
     color: white;
 }
 
-.carta__album__description{
-    font-size: 16px;
+.carta__album__description, .carta__song__description{
+    font-size: 13px;
     font-weight: 400;
     color: rgb(199, 199, 199);
+}
+
+
+.carta__album__busqueda{
+    width: 100%;
+    height: 100px;
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+.carta__album__btn{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgb(43, 43, 43);
+    border: none;
+    cursor: pointer;
+}
+
+.carta__album__btn:hover{
+    background-color: rgb(145, 145, 145);
 }
 
 /* Estilos para la barra de orden */
@@ -203,29 +232,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-.carta__album__busqueda{
-    width: 100%;
-    height: 100px;
-    border: 1px solid red;
-    cursor: pointer;
-}
-
-.carta__album__btn{
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: rgb(43, 43, 43);
-    border: none;
-    cursor: pointer;
-}
-
-.carta__album__btn:hover{
-    background-color: rgb(145, 145, 145);
 }
 
 /* Estilos para los resultados de clickear un album */
