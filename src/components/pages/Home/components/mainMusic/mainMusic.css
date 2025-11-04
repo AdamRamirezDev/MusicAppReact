@@ -2,10 +2,19 @@
 /* Estilo de Home */ 
 .home__container{
     width: 99%;
-    height: 85%;
     padding: 10px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    border: 2px solid red;
+}
+
+.home__container__tracks{
+    width: 99%;
+    height: 90%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 2px solid red;
 }
 
 .home__container__design{
@@ -15,18 +24,20 @@
     scrollbar-width: none;
     border-radius: 18px;
     margin: auto;
+    border: 1px solid blue;
     background: #111111;
     background: linear-gradient(180deg, rgba(33, 33, 33, 1) 0%, rgb(39, 39, 39) 49%, rgb(36, 36, 36) 69%, rgb(20, 20, 20) 100%);
 }
 
 .home__container__divisor{
-    width: 100%;
+    width: 99%;
     height: 120px;
     max-height: 120px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding:  5px 35px;    
+    padding:  5px 20px; 
+    border: 1px solid blue;   
 }
 
 .home__container__titulo{
@@ -38,6 +49,7 @@
 .home__container__text{
     font-size: 18px;
     font-weight: 200;
+    border: 1px solid red;
 }
 
 .carta__album{

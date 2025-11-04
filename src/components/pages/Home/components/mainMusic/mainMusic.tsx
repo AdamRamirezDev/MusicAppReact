@@ -23,17 +23,28 @@ export default function Home({
   const [loading, setLoading] = useState<true | false>(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedAlbumTracks, setSelectedAlbumTracks] = useState<Track[]>([]);
+  const [topTracks, setTopTracks] = useState<Track[]>([]);
 
+  // Fetch de la ventana principal (albumes, artistas y canciones mas escuchadas)
   useEffect(() => {
     const fetchAlbums = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/albums");
-        const data = await response.json();
-        console.log("Albumes: ", data);
-        setAlbums(data.data);
+        // Albumes mas escuchados
+        const resAlbums = await fetch("http://localhost:3001/api/albums");
+        const dataAlbumes = await resAlbums.json();
+        setAlbums(dataAlbumes.data);
+
+        //Canciones mas escuchadas
+        const resTracks = await fetch("http://localhost:3001/api/tracks"); 
+        const dataTracks= await resTracks.json();
+        setTopTracks(dataTracks.data);
+
+        console.log("Albumes: ", dataAlbumes);
+        console.log("Canciones: ", dataTracks);
+
       } catch (error) {
         console.error(error);
-        setError("Errror al cargar los albumes");
+        setError("Errror al cargar los datos");
       } finally {
         setLoading(false);
       }
@@ -259,6 +270,7 @@ export default function Home({
         </p>
       </div>
       <div className="home__container">
+        {/* Albumes */}
         {albums.map((album) => (
           <div className="carta__album">
             <div key={album.id}>
@@ -270,6 +282,22 @@ export default function Home({
               ></img>
               <h3 className="carta__album__titulo">{album.title}</h3>
               <p className="carta__album__description">{album.artist.name}</p>
+            </div>
+          </div>
+        ))}
+        {/* Canciones mas escuchadas */}
+      </div>
+        <div className="home__container__divisor">
+          <p className="home__container__text">
+            Un poco de todo, pero siempre lo que te gusta
+          </p>
+          <p className="home__container__titulo">Lo esta petando</p>
+      </div>
+      <div className="home__container__tracks">
+        {topTracks.map((track) => (
+          <div className="carta__song">
+            <div key={track.id}>
+              
             </div>
           </div>
         ))}

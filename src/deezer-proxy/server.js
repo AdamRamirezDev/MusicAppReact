@@ -37,6 +37,23 @@ app.get("/api/albums", async (req, res) => {
     }
 });
 
+//Endpoint para obtener las canciones mas escuchadas
+app.get("/api/tracks", async (req, res) => {
+
+    try {
+        const response = await fetch("https://api.deezer.com/chart/0/tracks?limit=10");
+        const data = await response.json();
+        res.json(data);
+
+    } catch(error){
+        res.status(500).json({error: "Error al obtener canciones populares"});
+    }
+});
+
+
+//Endpoint para obtener los artistas populares
+
+
 //Endpoint para obtener las canciones de un album
 app.get("/api/album/:id/tracks", async (req, res) => {
     const { id } = req.params;
