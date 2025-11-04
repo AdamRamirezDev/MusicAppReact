@@ -3,18 +3,7 @@
 .home__container{
     width: 99%;
     padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    border: 2px solid red;
-}
-
-.home__container__tracks{
-    width: 99%;
-    height: 90%;
-    padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    border: 2px solid red;
+    border: 5px solid red;
 }
 
 .home__container__design{
