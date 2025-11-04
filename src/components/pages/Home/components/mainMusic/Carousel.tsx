@@ -10,6 +10,8 @@ function Carousel({ children }){
                 options={{
                     perPage: 3,
                     focus: 0,
+                    autoWidth: true,
+                    pagination: false,
                     omitEnd: true,
                 }}
             aria-label="Mi carrusel de musica"

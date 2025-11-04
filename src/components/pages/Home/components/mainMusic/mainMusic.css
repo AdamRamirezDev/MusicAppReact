@@ -2,8 +2,9 @@
 /* Estilo de Home */ 
 .home__container{
     width: 99%;
+    height: 315px;
     padding: 10px;
-    border: 5px solid red;
+    border: 5px solid rgb(234, 31, 187);
 }
 
 .home__container__design{
@@ -41,18 +42,21 @@
     border: 1px solid red;
 }
 
+/* Estilos para las cartas de los albums */
+
 .carta__album{
-    width: 210px;
+    width: 160px;
     height: 300px;
     display: flex;
     justify-content: center;
     margin: auto;
     cursor: pointer;
+    border: 1px solid blue;
 }
 
 .carta__album__img{
-    width: 220px;
-    height: 220px;
+    width: 160px;
+    height: 160px;
     border-radius: 22px;
 }
 
