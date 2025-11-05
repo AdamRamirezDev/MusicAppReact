@@ -10,6 +10,8 @@ interface HomeProps {
   onSetPlaylist: (tracks: Track[]) => void;
   selectedAlbum: Album | null;
   setSelectedAlbum: (album: Album | null) => void;
+  selectedPlaylist: Playlist | null;
+  setSelectedPlaylist: (playlist: Playlist | null) => void;
 }
 
 export default function Home({
@@ -19,6 +21,8 @@ export default function Home({
   onSetPlaylist,
   selectedAlbum,
   setSelectedAlbum,
+  selectedPlaylist,
+  setSelectedPlaylist,
 }: HomeProps) {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [loading, setLoading] = useState<true | false>(true);
@@ -26,7 +30,7 @@ export default function Home({
   const [selectedAlbumTracks, setSelectedAlbumTracks] = useState<Track[]>([]);
   const [topTracks, setTopTracks] = useState<Track[]>([]);
   const [playLists, setPlayLists] = useState<Playlist[]>([]);
-  const [selectedPlaylist, setSelectedPlaylist] = useState<Playlist | null>(null);
+  //const [selectedPlaylist, setSelectedPlaylist] = useState<Playlist | null>(null);
   const [selectedPlaylistTracks, setSelectedPlaylistTracks] = useState<Track[]>([]);
 
   // Fetch de la ventana principal (albumes, artistas y canciones mas escuchadas)

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Busqueda from "./components/busqueda/busqueda";
 import Home from "./components/mainMusic/mainMusic";
 import Reproductor from "./components/reproductor/reproductor";
-import type { Track, Album } from "../../../types/deezerTypes";
+import type { Track, Album, Playlist } from "../../../types/deezerTypes";
 
 export default function PrincipalPage() {
   const [searchResults, setSearchResults] = useState<Track[]>([]);
@@ -10,11 +10,13 @@ export default function PrincipalPage() {
   const [currentTrack, setCurrentTrack] = useState<Track | null>(null);
   const [selectedAlbum, setSelectedAlbum] = useState<Album | null>(null);
   const [playlist, setPlaylist] = useState<Track[]>([]);
+  const [selectedPlaylist, setSelectedPlaylist] = useState<Playlist | null>(null);
 
   //Funcion que regresa al inicio
   function resetToMain(){
     setIsSearching(false);
     setSelectedAlbum(null);
+    setSelectedPlaylist(null);
   }
 
   //Funcion que recibe la playlist de mainMusic
@@ -48,6 +50,8 @@ export default function PrincipalPage() {
             setSelectedAlbum={setSelectedAlbum}
             selectedAlbum={selectedAlbum}
             onSetPlaylist={handleSetPlaylist}
+            selectedPlaylist={selectedPlaylist}
+            setSelectedPlaylist={setSelectedPlaylist}
           />
         </div>
       </div>
