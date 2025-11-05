@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./mainMusic.css";
-import type { Track, Album } from "../../../../../types/deezerTypes";
-import Carousel from "./carousel";
+import type { Track, Album, Playlist } from "../../../../../types/deezerTypes";
+import Carousel from "./Carousel";
 
 interface HomeProps {
   searchResults: Track[];
@@ -25,7 +25,7 @@ export default function Home({
   const [error, setError] = useState<string | null>(null);
   const [selectedAlbumTracks, setSelectedAlbumTracks] = useState<Track[]>([]);
   const [topTracks, setTopTracks] = useState<Track[]>([]);
-  const [playLists, setPlayLists] = useState<Album[]>([]);
+  const [playLists, setPlayLists] = useState<Playlist[]>([]);
 
   // Fetch de la ventana principal (albumes, artistas y canciones mas escuchadas)
   useEffect(() => {
@@ -45,9 +45,11 @@ export default function Home({
         const resPlaylists = await fetch("http://localhost:3001/api/playlists");
         const dataPlaylists = await resPlaylists.json();
         setPlayLists(dataPlaylists.data);
+        
 
         console.log("Albumes: ", dataAlbumes);
         console.log("Canciones: ", dataTracks);
+        console.log("Playlists: ",  dataPlaylists);
       } catch (error) {
         console.error(error);
         setError("Errror al cargar los datos");
@@ -299,9 +301,9 @@ export default function Home({
       </div>
       <div className="home__container__divisor">
         <p className="home__container__text">
-          Un poco de todo, pero siempre lo que te gusta
+          Tienes que escuchar esto
         </p>
-        <p className="home__container__titulo">Lo esta petando</p>
+        <p className="home__container__titulo">Estas canciones lo estan petando</p>
       </div>
       {/* Canciones mas escuchadas */}
       <div className="home__container">
@@ -330,18 +332,16 @@ export default function Home({
       {/* Playlist mas escuchadas */}
       <div className="home__container">
           <Carousel>
-            {playLists.map((playlist) => {
+            {playLists.map((playlist) => (
               <div className="carta__album" key={playlist.id}>
-                <div key={playlist.id}>
                   <img
-                    src={playlist.cover_medium}
+                    src={playlist.picture_medium}
                     alt={playlist.title}
                     className="carta__album__img"
                   ></img>
                   <h3 className="carta__album__titulo">{playlist.title}</h3>
                 </div>
-              </div>;
-            })}
+            ))}
           </Carousel>
       </div>
     </div>

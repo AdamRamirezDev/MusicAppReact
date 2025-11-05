@@ -27,5 +27,14 @@ export interface Album {
     md5_image: string;
   };
   duration: number;
+}
+
+export interface Playlist {
+
+  id: number;
+  title: string;
+  picture: string;
+  picture_medium: string;
+  picture_small: string;
 
 }
