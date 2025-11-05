@@ -20,6 +20,7 @@ export interface Album {
   id: number;
   cover_small: string;
   cover_medium: string;
+  picture_medium: string;
   title: string;
   artist: {
     name: string;
@@ -30,11 +31,11 @@ export interface Album {
 }
 
 export interface Playlist {
-
   id: number;
   title: string;
-  picture: string;
-  picture_medium: string;
+  description: string;
   picture_small: string;
-
+  picture_medium: string;
+  nb_tracks: number;
+  fans: number;
 }

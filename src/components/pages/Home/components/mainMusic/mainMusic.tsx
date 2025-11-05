@@ -26,6 +26,8 @@ export default function Home({
   const [selectedAlbumTracks, setSelectedAlbumTracks] = useState<Track[]>([]);
   const [topTracks, setTopTracks] = useState<Track[]>([]);
   const [playLists, setPlayLists] = useState<Playlist[]>([]);
+  const [selectedPlaylist, setSelectedPlaylist] = useState<Playlist | null>(null);
+  const [selectedPlaylistTracks, setSelectedPlaylistTracks] = useState<Track[]>([]);
 
   // Fetch de la ventana principal (albumes, artistas y canciones mas escuchadas)
   useEffect(() => {
@@ -163,7 +165,7 @@ export default function Home({
         `http://localhost:3001/api/album/${album.id}/tracks`
       );
       const data = await response.json();
-      console.log("Funcion hanlde, esta es la info: ", data);
+      console.log("Funcion handle album, esta es la info: ", data);
       setSelectedAlbumTracks(data.data);
       onSetPlaylist(data.data);
     } catch (error) {
@@ -171,11 +173,125 @@ export default function Home({
     }
   };
 
+  /* Mostrar canciones de la playlist que se seleccionó */
+  const handlePlaylistClick = async (playlist: Playlist) => {
+    try {
+      console.log("Playlist ID recibido: ", playlist.id);
+      setSelectedPlaylist(playlist);
+      console.log("Playlist seleccionada desde main: ", playlist);
+      const response = await fetch(
+        `http://localhost:3001/api/playlist/${playlist.id}/tracks`
+      );
+      const data = await response.json();
+      console.log("Función handle playlist, esta es la info: ", data);
+      setSelectedPlaylistTracks(data.data);
+      onSetPlaylist(data.data);
+    } catch (error) {
+      console.error("Error al cargar las canciones de la playlist", error);
+    }
+  };
+
   /* Manejo de estados de carga y error (MEJORAR)*/
   if (loading) return <p>Cargando álbumes...</p>;
   if (error) return <p>{error}</p>;
 
-  /* Resultados de el album seleccionado Html*/
+  /* Resultados de la playlist seleccionada */
+  if (selectedPlaylist) {
+    return (
+      <div className="home__container__design__songs">
+        <div className="home__divisor__album">
+          <img
+            src={selectedPlaylist.picture_medium}
+            className="home__album__img"
+            alt={selectedPlaylist.title}
+          />
+          <div className="home__album__principal__information">
+            <p className="home__album__text">Playlist pública</p>
+            <p className="home__album__titulo">{selectedPlaylist.title}</p>
+          </div>
+        </div>
+        <div className="home__container__order">
+          <div className="order__information__num1">
+            <p className="order__information__number">#</p>
+            <p className="order__information__title">Titulo</p>
+          </div>
+          <div className="order__information__num2">
+            <p>Album</p>
+            <p>Duración</p>
+            <p>Rank</p>
+          </div>
+        </div>
+
+        <div className="home__container__songs">
+          {selectedPlaylistTracks.map((song) => (
+            <div key={song.id} className="trak__item__song">
+              <div className="track__item__song__division__num1">
+                <p className="track__item__number">1222</p>
+                <button
+                  onClick={() => {
+                    onPlayTrack(song);
+                    onSetPlaylist(selectedPlaylistTracks);
+                  }}
+                  className="carta__album__btn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="#fffefe"
+                      fillOpacity="0"
+                      stroke="#fffefe"
+                      strokeDasharray="40"
+                      strokeDashoffset="40"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M8 6l10 6l-10 6Z"
+                    >
+                      <animate
+                        fill="freeze"
+                        attributeName="fill-opacity"
+                        begin="0.475s"
+                        dur="0.475s"
+                        values="0;1"
+                      />
+                      <animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        dur="0.475s"
+                        values="40;0"
+                      />
+                    </path>
+                  </svg>
+                </button>
+                <img
+                  className="track__item__song__img"
+                  src={song.album.cover_small}
+                  alt={song.title}
+                />
+              </div>
+              <div className="track__item__song__division__num2">
+                <h3>{song.title}</h3>
+                <p>{song.artist.name}</p>
+              </div>
+              <div className="track__item__duration">
+                <p className="track__item__album__title">
+                  {song.album.title}
+                </p>
+                <p className="track__item__song__duration">{song.duration}</p>
+                <p className="track__item__song__rank">{song.rank}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  /* Resultados del album seleccionado Html*/
   if (selectedAlbum) {
     return (
       <div className="home__container__design__songs">
@@ -337,8 +453,9 @@ export default function Home({
                   <img
                     src={playlist.picture_medium}
                     alt={playlist.title}
+                    onClick={() => handlePlaylistClick(playlist)}
                     className="carta__album__img"
-                  ></img>
+                  />
                   <h3 className="carta__album__titulo">{playlist.title}</h3>
                 </div>
             ))}
