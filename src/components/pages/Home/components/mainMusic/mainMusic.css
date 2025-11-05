@@ -101,6 +101,22 @@
     background-color: rgb(145, 145, 145);
 }
 
+.carta__song__btn{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    position: absolute;
+    margin-top: 110px;
+    margin-left: 110px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgb(1, 169, 7);
+    border: none;
+    cursor: pointer;
+}
+
+
 /* Estilos para la barra de orden */
 .home__container__order{
     width: 98%;

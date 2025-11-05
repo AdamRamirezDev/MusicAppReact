@@ -177,6 +177,9 @@ export default function Home({
     }
   };
 
+  /* Logica de las canciones TOP */
+
+
   /* Mostrar canciones de la playlist que se seleccionó */
   const handlePlaylistClick = async (playlist: Playlist) => {
     try {
@@ -431,6 +434,16 @@ export default function Home({
           {topTracks.map((track) => (
             <div className="carta__song">
               <div key={track.id}>
+                <button 
+                  onClick={() => {
+                    onPlayTrack(track);
+                  }}
+                  className="carta__song__btn"
+                  
+                  
+                  >
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#fff" d="M6 5.912c0-.155.037-.307.107-.443c.23-.44.75-.599 1.163-.354l10.29 6.088c.14.083.255.206.332.355c.23.44.08.995-.332 1.239L7.27 18.885a.8.8 0 0 1-.415.115C6.383 19 6 18.592 6 18.089z"/></svg>
+                </button>
                 <img
                   src={track.album.cover_medium}
                   alt={track.title}
