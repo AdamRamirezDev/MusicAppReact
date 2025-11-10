@@ -5,8 +5,8 @@
 Aplicación web React + TypeScript que muestra álbumes, canciones y playlists populares de Deezer usando un pequeño proxy Express local para evitar CORS y unificar respuestas. Permite buscar, ver pistas de un álbum o playlist y reproducir previews.
 
 ## Capturas
-![musicAppReact3](assets/screenshots/musicAppReact3.png)
-![musicAppReact4](assets/screenshots/musicAppReact4.png)
+![musicAppReact3](./src/assets/screenshots/MusicAppReact4.png)
+![musicAppReact4](./src/assets/screenshots/MusicAppReact5.png)
 
 
 ## Tecnologías 🔎
