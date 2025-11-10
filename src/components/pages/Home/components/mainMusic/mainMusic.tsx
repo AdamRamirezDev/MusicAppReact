@@ -30,8 +30,10 @@ export default function Home({
   const [selectedAlbumTracks, setSelectedAlbumTracks] = useState<Track[]>([]);
   const [topTracks, setTopTracks] = useState<Track[]>([]);
   const [playLists, setPlayLists] = useState<Playlist[]>([]);
-  //const [selectedPlaylist, setSelectedPlaylist] = useState<Playlist | null>(null);
   const [selectedPlaylistTracks, setSelectedPlaylistTracks] = useState<Track[]>([]);
+
+  //Colores para los albumes.
+  const randomBg = Math.floor(Math.random() *  5) + 1;
 
   // Fetch de la ventana principal (albumes, artistas y canciones mas escuchadas)
   useEffect(() => {
@@ -75,7 +77,6 @@ export default function Home({
     }
     return `${minutos}:${segundos}`;
   }
-
 
   /* Resultados del buscador */
   if (isSearching && searchResults.length > 0) {
@@ -188,9 +189,6 @@ export default function Home({
     }
   };
 
-  /* Logica de las canciones TOP */
-
-
   /* Mostrar canciones de la playlist que se seleccionó */
   const handlePlaylistClick = async (playlist: Playlist) => {
     try {
@@ -217,7 +215,7 @@ export default function Home({
   if (selectedPlaylist) {
     return (
       <div className="home__container__design__songs">
-        <div className="home__divisor__album">
+        <div className={`home__divisor__album card-bg-${randomBg}`}>
           <img
             src={selectedPlaylist.picture_medium}
             className="home__album__img"
@@ -313,7 +311,7 @@ export default function Home({
   if (selectedAlbum) {
     return (
       <div className="home__container__design__songs">
-        <div className="home__divisor__album">
+        <div className={`home__divisor__album card-bg-${randomBg}`}>
           <img
             src={selectedAlbum.cover_medium}
             className="home__album__img"
