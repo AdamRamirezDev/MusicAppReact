@@ -114,6 +114,32 @@
 
 }
 
+/* Colores */
+.reproductor-bg-1{
+    background: rgb(25, 126, 151);
+}
+
+.reproductor-bg-2{
+    background-color: rgb(155, 111, 28);
+}
+
+.reproductor-bg-3{
+    background: rgb(169, 29, 64);
+}
+
+.reproductor-bg-4{
+    background: rgb(32, 32, 176);
+}
+
+.reproductor-bg-5{
+    background: rgb(46, 130, 46);
+}
+
+.reproductor-bg-6{
+    background: rgb(119, 23, 119);
+}
+
+
 
 /* Media queries para pantallas chicas de escritorio*/
 @media (max-width: 1024px) and (min-height: 600px){
@@ -133,11 +159,9 @@
     .reproductor__cancion__divisor{
         height: 100%;
         padding-left: 3px;
-        border: 1px solid red;
     }
     .reproductor__cancion__title{
         font-size: 17px;
-        
     }
 
     /* Controles*/
@@ -149,20 +173,34 @@
 
 @media (max-width: 475px){
 
+    .division__reproductor{
+        height: 100px;        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
     .reproductor__container{
-        height: 80%;
+        height: 70%;
+        width: 95%;
         align-items: center;
         justify-content: space-between;
-        border: 4px solid red;
+        margin: 0px;
+        border-radius: 8px;
     }
-    
-
+    .reproductor__container__cancion{
+        width: 50%;
+    }
     .reproductor__cancion__divisor{
-        width: 100%
+        width: 100%;
+        padding-left: 8px;
+    }
+    .reproductor__cancion__title{
+        font-size: 20px;
     }
     .reproductor__container__controles{
         width: 30%;
-        border: 3px solid blue
     }
     .reproductor__btn{
         width: 80px;

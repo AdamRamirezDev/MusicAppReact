@@ -12,6 +12,8 @@ interface HomeProps {
   setSelectedAlbum: (album: Album | null) => void;
   selectedPlaylist: Playlist | null;
   setSelectedPlaylist: (playlist: Playlist | null) => void;
+  setNumberColor: (num: number) => void;
+  numberColor: number;
 }
 
 export default function Home({
@@ -23,6 +25,8 @@ export default function Home({
   setSelectedAlbum,
   selectedPlaylist,
   setSelectedPlaylist,
+  setNumberColor,
+  numberColor
 }: HomeProps) {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [loading, setLoading] = useState<true | false>(true);
@@ -31,9 +35,6 @@ export default function Home({
   const [topTracks, setTopTracks] = useState<Track[]>([]);
   const [playLists, setPlayLists] = useState<Playlist[]>([]);
   const [selectedPlaylistTracks, setSelectedPlaylistTracks] = useState<Track[]>([]);
-
-  //Colores para los albumes.
-  const randomBg = Math.floor(Math.random() *  5) + 1;
 
   // Fetch de la ventana principal (albumes, artistas y canciones mas escuchadas)
   useEffect(() => {
@@ -54,10 +55,6 @@ export default function Home({
         const dataPlaylists = await resPlaylists.json();
         setPlayLists(dataPlaylists.data);
         
-
-        console.log("Albumes: ", dataAlbumes);
-        console.log("Canciones: ", dataTracks);
-        console.log("Playlists: ",  dataPlaylists);
       } catch (error) {
         console.error(error);
         setError("Errror al cargar los datos");
@@ -174,16 +171,18 @@ export default function Home({
   /* Mostrar canciones del album que se selecciono Logica*/
   const handleAlbumClick = async (album: Album) => {
     try {
-      console.log("Album ID recibido: ", album.id);
+
       setSelectedAlbum(album);
-      console.log("Album seleccionado desde main: ", album);
       const response = await fetch(
         `http://localhost:3001/api/album/${album.id}/tracks`
       );
       const data = await response.json();
-      console.log("Funcion handle album, esta es la info: ", data);
       setSelectedAlbumTracks(data.data);
       onSetPlaylist(data.data);
+        //Colores para los albumes.
+      const randomBg = Math.floor(Math.random() *  6) + 1;
+      setNumberColor(randomBg);
+
     } catch (error) {
       console.error("Error al cargar las canciones del album", error);
     }
@@ -192,16 +191,17 @@ export default function Home({
   /* Mostrar canciones de la playlist que se seleccionó */
   const handlePlaylistClick = async (playlist: Playlist) => {
     try {
-      console.log("Playlist ID recibido: ", playlist.id);
       setSelectedPlaylist(playlist);
-      console.log("Playlist seleccionada desde main: ", playlist);
       const response = await fetch(
         `http://localhost:3001/api/playlist/${playlist.id}/tracks`
       );
       const data = await response.json();
-      console.log("Función handle playlist, esta es la info: ", data);
       setSelectedPlaylistTracks(data.data);
       onSetPlaylist(data.data);
+      //Colores de tarjeta
+      const randomBg = Math.floor(Math.random() *  6) + 1;
+      setNumberColor(randomBg);
+
     } catch (error) {
       console.error("Error al cargar las canciones de la playlist", error);
     }
@@ -215,7 +215,7 @@ export default function Home({
   if (selectedPlaylist) {
     return (
       <div className="home__container__design__songs">
-        <div className={`home__divisor__album card-bg-${randomBg}`}>
+        <div className={`home__divisor__album card-bg-${numberColor}`}>
           <img
             src={selectedPlaylist.picture_medium}
             className="home__album__img"
@@ -311,7 +311,7 @@ export default function Home({
   if (selectedAlbum) {
     return (
       <div className="home__container__design__songs">
-        <div className={`home__divisor__album card-bg-${randomBg}`}>
+        <div className={`home__divisor__album card-bg-${numberColor}`}>
           <img
             src={selectedAlbum.cover_medium}
             className="home__album__img"

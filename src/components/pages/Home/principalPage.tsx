@@ -11,6 +11,7 @@ export default function PrincipalPage() {
   const [selectedAlbum, setSelectedAlbum] = useState<Album | null>(null);
   const [playlist, setPlaylist] = useState<Track[]>([]);
   const [selectedPlaylist, setSelectedPlaylist] = useState<Playlist | null>(null);
+  const [numberColor, setNumberColor] = useState<number>(0); 
 
   //Funcion que regresa al inicio
   function resetToMain(){
@@ -52,6 +53,8 @@ export default function PrincipalPage() {
             onSetPlaylist={handleSetPlaylist}
             selectedPlaylist={selectedPlaylist}
             setSelectedPlaylist={setSelectedPlaylist}
+            setNumberColor={setNumberColor}
+            numberColor={numberColor}
           />
         </div>
       </div>
@@ -61,6 +64,7 @@ export default function PrincipalPage() {
           currentTrack={currentTrack} 
           playlist={playlist}
           onChangeTrack={setCurrentTrack}
+          numberColor={numberColor}
         />
       </div>
     </div>

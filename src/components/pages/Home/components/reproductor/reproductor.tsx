@@ -6,9 +6,10 @@ export interface ReproductorProps {
   currentTrack: Track | null;
   playlist: Track[],
   onChangeTrack: (track: Track) => void;
+  numberColor: number;
 }
 
-export default function Reproductor({ currentTrack, playlist, onChangeTrack }: ReproductorProps) {
+export default function Reproductor({ currentTrack, playlist, onChangeTrack, numberColor }: ReproductorProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState<true | false>(false);
   const [volume, setVolume] = useState<number>(0.5);
@@ -17,6 +18,8 @@ export default function Reproductor({ currentTrack, playlist, onChangeTrack }: R
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
+  //Verificacion de si la pagina cumple con el width
+  const isMobile = window.innerWidth <= 475;
 
   //Cambio de cancion
   useEffect(() => {
@@ -107,7 +110,7 @@ export default function Reproductor({ currentTrack, playlist, onChangeTrack }: R
   };
 
   return (
-    <div className="reproductor__container">
+    <div className={`reproductor__container ${isMobile ? `reproductor-bg-${numberColor}` : ``}`}>
       {/* nombre y album*/}
       <div className="reproductor__container__cancion">
         <div className="reproductor__cancion__divisor">
