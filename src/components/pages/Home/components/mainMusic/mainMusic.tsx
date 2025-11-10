@@ -66,6 +66,17 @@ export default function Home({
     fetchAlbums();
   }, []);
 
+  /* Logica de los minutos y segundos */
+  const duracionFormateada = (duracion: number) => {
+    const minutos = Math.floor(duracion / 60);
+    const segundos = Math.floor(duracion % 60).toString().padStart(1, '0');
+    if (segundos.length < 2) {
+      return `${minutos}:0${segundos}`;
+    }
+    return `${minutos}:${segundos}`;
+  }
+
+
   /* Resultados del buscador */
   if (isSearching && searchResults.length > 0) {
     return (
@@ -147,7 +158,7 @@ export default function Home({
                     {track.album.title}
                   </p>
                   <p className="track__item__song__duration">
-                    {track.duration}
+                    {duracionFormateada(track.duration)}
                   </p>
                   <p className="track__item__song__rank">{track.rank}</p>
                 </div>
@@ -288,7 +299,7 @@ export default function Home({
                 <p className="track__item__album__title">
                   {song.album.title}
                 </p>
-                <p className="track__item__song__duration">{song.duration}</p>
+                <p className="track__item__song__duration">{duracionFormateada(song.duration)}</p>
                 <p className="track__item__song__rank">{song.rank}</p>
               </div>
             </div>
@@ -384,7 +395,7 @@ export default function Home({
                 <p className="track__item__album__title">
                   {selectedAlbum.title}
                 </p>
-                <p className="track__item__song__duration">{song.duration}</p>
+                <p className="track__item__song__duration">{duracionFormateada(song.duration)}</p>
                 <p className="track__item__song__rank">{song.rank}</p>
               </div>
             </div>
