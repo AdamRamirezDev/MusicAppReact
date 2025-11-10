@@ -7,6 +7,20 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Capturas de pantalla
+
+A continuación algunas capturas de la aplicación (extraídas de la carpeta `src/assets/screenshots`).
+
+<p align="center">
+  <img src="src/assets/screenshots/musicAppReact3.png" alt="Vista principal - MusicAppReact" width="700" />
+</p>
+
+<p align="center">
+  <img src="src/assets/screenshots/MusicAppReact4.png" alt="Vista álbum - MusicAppReact" width="700" />
+</p>
+
+Las imágenes están en `src/assets/screenshots/`. Si cambias su ubicación, actualiza las rutas anteriores.
+
 ## React Compiler
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
