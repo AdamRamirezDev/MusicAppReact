@@ -90,11 +90,11 @@ export default function Home({
 
         {/* Contenedor de canciones */}
         <div className="home__container__songs">
-          {searchResults.map((track) => {
+          {searchResults.map((track, index) => {
             return (
               <div className="trak__item__song" key={track.id}>
                 <div className="track__item__song__division__num1">
-                  <p className="track__item__number">1222</p>
+                  <p className="track__item__number">{ index + 1 }</p>
                   <button
                     onClick={() => onPlayTrack(track)}
                     className="carta__album__btn"
@@ -230,10 +230,10 @@ export default function Home({
         </div>
 
         <div className="home__container__songs">
-          {selectedPlaylistTracks.map((song) => (
+          {selectedPlaylistTracks.map((song, index) => (
             <div key={song.id} className="trak__item__song">
               <div className="track__item__song__division__num1">
-                <p className="track__item__number">1222</p>
+                <p className="track__item__number">{ index + 1 }</p>
                 <button
                   onClick={() => {
                     onPlayTrack(song);
@@ -326,10 +326,10 @@ export default function Home({
         </div>
 
         <div className="home__container__songs">
-          {selectedAlbumTracks.map((song) => (
+          {selectedAlbumTracks.map((song, index) => (
             <div key={song.id} className="trak__item__song">
               <div className="track__item__song__division__num1">
-                <p className="track__item__number">1222</p>
+                <p className="track__item__number">{index + 1}</p>
                 <button
                   onClick={() => {
                     onPlayTrack(song);
