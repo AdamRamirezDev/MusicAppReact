@@ -9,17 +9,15 @@ Currently, two official plugins are available:
 
 ## Capturas de pantalla
 
-A continuación algunas capturas de la aplicación (extraídas de la carpeta `src/assets/screenshots`).
+A continuación algunas capturas de la aplicación (archivos dentro de `src/assets/screenshots`). En GitHub se mostrarán al usar rutas relativas.
 
+
+<!-- Imagen grande centrada (fallback/preview) -->
 <p align="center">
-  <img src="src/assets/screenshots/musicAppReact3.png" alt="Vista principal - MusicAppReact" width="700" />
+  <img src="src/assets/screenshots/musicAppReact3.png" alt="Vista principal - MusicAppReact (grande)" width="800" />
 </p>
 
-<p align="center">
-  <img src="src/assets/screenshots/MusicAppReact4.png" alt="Vista álbum - MusicAppReact" width="700" />
-</p>
-
-Las imágenes están en `src/assets/screenshots/`. Si cambias su ubicación, actualiza las rutas anteriores.
+Las imágenes están en `src/assets/screenshots/`. Si las mueves, actualiza las rutas en este README.
 
 ## React Compiler
 
