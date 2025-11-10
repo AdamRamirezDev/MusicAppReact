@@ -132,7 +132,7 @@
 }
 
 .reproductor-bg-5{
-    background: rgb(46, 130, 46);
+    background: rgb(146, 40, 36);
 }
 
 .reproductor-bg-6{
@@ -190,22 +190,28 @@
         border-radius: 8px;
     }
     .reproductor__container__cancion{
-        width: 50%;
+        width: 85%;
     }
     .reproductor__cancion__divisor{
         width: 100%;
         padding-left: 8px;
+        overflow: hidden;
     }
     .reproductor__cancion__title{
-        font-size: 20px;
+        font-size: 16px;
     }
     .reproductor__container__controles{
         width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
     }
     .reproductor__btn{
-        width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
         background-color: transparent;
+        border-radius: 0px;
     }
     .reproductor__back, .reproductor__next{
         display: none;

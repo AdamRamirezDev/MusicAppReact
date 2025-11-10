@@ -3,7 +3,6 @@
     width: 99%;
     height: 300px;
     padding: 10px;
-    border: 5px solid rgb(234, 31, 187);
 }
 
 .home__container__design{
@@ -13,7 +12,6 @@
     scrollbar-width: none;
     border-radius: 18px;
     margin: auto;
-    border: 1px solid blue;
     background: #111111;
     background: linear-gradient(180deg, rgba(33, 33, 33, 1) 0%, rgb(39, 39, 39) 49%, rgb(36, 36, 36) 69%, rgb(20, 20, 20) 100%);
 }
@@ -26,7 +24,6 @@
     flex-direction: column;
     align-items: flex-start;
     padding:  6px 20px; 
-    border: 1px solid blue;   
 }
 
 .home__container__titulo{
@@ -38,7 +35,6 @@
 .home__container__text{
     font-size: 16px;
     font-weight: 200;
-    border: 1px solid red;
 }
 
 /* Estilos para las cartas de los albums y canciones (Tienen el mismo estilo) */
@@ -49,7 +45,6 @@
     justify-content: flex-start;
     margin: auto;
     cursor: pointer;
-    border: 1px solid blue;
 }
 
 .carta__album{
@@ -80,7 +75,6 @@
 .carta__album__busqueda{
     width: 100%;
     height: 100px;
-    border: 1px solid red;
     cursor: pointer;
 }
 
@@ -272,13 +266,19 @@
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-.home__album__text, .home__album__artist{
+.home__album__text{
     color: white;
+    font-size: 16px;
     font-weight: 400;
 }
 
+.home__album__artista{
+    font-size: 70px;
+    font-weight: 700;
+}
+
 .home__album__titulo{
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 700;
 }
 
@@ -366,7 +366,7 @@
 }
 
 .card-bg-5{
-    background: linear-gradient(0deg, rgb(1, 71, 29) 0%, rgb(0, 120, 12) 17%, rgb(0, 202, 27) 56%, rgb(1, 251, 34) 100%);
+    background: linear-gradient(0deg, rgb(67, 7, 0) 0%, rgb(171, 29, 0) 17%, rgb(161, 41, 39) 56%, rgb(252, 38, 1) 100%);
 }
 
 .card-bg-6{
@@ -430,10 +430,10 @@
 
     .home__container__divisor{
         padding: 10px 10px;
-        max-height: 90px;
+        max-height: 120px;
     }
     .home__container__titulo{
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .home__container__design{
@@ -443,7 +443,6 @@
 
     .division__container{
         width: 100%;
-        border: 4px solid rgb(250, 217, 2);
     }
 
     /* Estilos de las canciones */
@@ -468,14 +467,19 @@
     }
 
     /* Estilos del album*/
+    .home__album__artista{
+        font-size: 30px;
+    }
+    .home__album__titulo{
+        font-size: 218px;
+    }
+
     .home__container__design__songs{
         height: 90%;
-        border: 3px solid orange;
     }
 
     .home__container__songs{
         height: 100%;
-        border: 2px solid salmon;
     }
 
     .home__divisor__album{
