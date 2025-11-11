@@ -14,7 +14,6 @@ export default function Reproductor({ currentTrack, playlist, onChangeTrack, num
   const [isPlaying, setIsPlaying] = useState<true | false>(false);
   const [volume, setVolume] = useState<number>(0.5);
   const [currentTime, setCurrentTime] = useState<number>(0);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
@@ -45,6 +44,7 @@ export default function Reproductor({ currentTrack, playlist, onChangeTrack, num
 
     const updateProgress = () => {
       setProgress(audio.currentTime);
+      setCurrentTime(audio.currentTime); 
       setDuration(audio.duration);
     }
 

@@ -3,7 +3,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
 
-function Carousel({ children }){
+function Carousel({ children }: { children: React.ReactNode[]}){
 
     return (
             <Splide
@@ -16,7 +16,7 @@ function Carousel({ children }){
                 }}
             aria-label="Mi carrusel de musica"
         >
-            {children.map((child, index) => (
+            {children.map((child: React.ReactNode, index: number) => (
                 <SplideSlide key={index}>{child}</SplideSlide>
             ))}
         </Splide>
