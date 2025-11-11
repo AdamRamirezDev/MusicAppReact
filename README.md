@@ -90,7 +90,7 @@ All Rights Reserved.
 
 [](https://github.com/AdamRamirezDev/BrowserExtensionManager#contacto-)
 
-💻 **Mi perfil de Linkedin:** [Linkedin](https://www.linkedin.com/in/adam-samuel-inzunza-ramirez/)  
-🌐 **Mira mi portafolio!** [Portafolio](https://adamramirezdev.github.io/PortafolioFrontend/)
-📩 **Email: [adaminzunza3@gmail.com](mailto:adaminzunza3@gmail.com)** ​  
+💻 **Mi perfil de Linkedin:** [Linkedin](https://www.linkedin.com/in/adam-samuel-inzunza-ramirez/)<br>
+🌐 **Mira mi portafolio!** [Portafolio](https://adamramirezdev.github.io/PortafolioFrontend/)<br>
+📩 **Email: [adaminzunza3@gmail.com](mailto:adaminzunza3@gmail.com)** <br>
 📱 **Telefono: 3320664573**
