@@ -58,7 +58,7 @@ export default function Reproductor({ currentTrack, playlist, onChangeTrack, num
   useEffect(() => {
     if (playlist && currentTrack){
       const index = playlist.findIndex(t => t.id === currentTrack.id);
-      setCurrentIndex(index);
+      console.log("Índice actual:", index);
     }
   }, [currentTrack, playlist])
 
