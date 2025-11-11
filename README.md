@@ -66,10 +66,13 @@ Versión preview:
 npm run preview
 
 ## Uso 💡
-
-[](https://github.com/AdamRamirezDev/BrowserExtensionManager#uso-)
-
-Es un proyecto simple que solo requiere visualizacion, se ven tarjetas activas e inactivas, en la parte de arriba se permite filtrarlas para una mejor experiencia de usuario.
+Página principal muestra:
+Carrusel de álbumes populares — clic en una portada carga las pistas del álbum en la vista principal.
+Carrusel de canciones top — botones para reproducir preview.
+Carrusel de playlists — clic en una portada carga las pistas de la playlist.
+Buscador — muestra resultados en el área principal cuando se busca algo.
+Reproducción:
+La app usa preview (URL preview en Track) para reproducir 30s; la función onPlayTrack en el componente principal maneja la reproducción y onSetPlaylist actualiza la lista de reproducción.
 
 ## Demo 📌
 
@@ -87,7 +90,7 @@ All Rights Reserved.
 
 [](https://github.com/AdamRamirezDev/BrowserExtensionManager#contacto-)
 
-💻 **Mi perfil de Linkedin:** [Linkedin](https://www.linkedin.com/in/adam-samuel-inzunza-ramirez/)  
-🌐 **Mira mi portafolio!** [Portafolio](https://cuandoyolabi.github.io/PortafolioFrontend/)  
-📩 **Email: [adaminzunza3@gmail.com](mailto:adaminzunza3@gmail.com)** ​  
+💻 **Mi perfil de Linkedin:** [Linkedin](https://www.linkedin.com/in/adam-samuel-inzunza-ramirez/)<br>
+🌐 **Mira mi portafolio!** [Portafolio](https://adamramirezdev.github.io/PortafolioFrontend/)<br>
+📩 **Email: [adaminzunza3@gmail.com](mailto:adaminzunza3@gmail.com)** <br>
 📱 **Telefono: 3320664573**
