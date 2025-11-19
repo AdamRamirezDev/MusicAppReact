@@ -16,7 +16,7 @@ export const BusquedaDeezer = () => {
         setError(null);
 
         try {
-            const res = await fetch(`http://localhost:3001/api/search?q=${encodeURIComponent(query)}`);
+            const res = await fetch(`https://musicappreactbackend-production.up.railway.app//api/search?q=${encodeURIComponent(query)}`);
             const data = await res.json() as DeezerSearchResponse;
             console.log(data);
             setTracks(data.data)

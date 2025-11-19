@@ -41,17 +41,17 @@ export default function Home({
     const fetchAlbums = async () => {
       try {
         // Albumes mas escuchados
-        const resAlbums = await fetch("http://localhost:3001/api/albums");
+        const resAlbums = await fetch("https://musicappreactbackend-production.up.railway.app/api/albums");
         const dataAlbumes = await resAlbums.json();
         setAlbums(dataAlbumes.data);
 
         //Canciones mas escuchadas
-        const resTracks = await fetch("http://localhost:3001/api/tracks");
+        const resTracks = await fetch("https://musicappreactbackend-production.up.railway.app//api/tracks");
         const dataTracks = await resTracks.json();
         setTopTracks(dataTracks.data);
 
         //PlayLists mas escuchadas
-        const resPlaylists = await fetch("http://localhost:3001/api/playlists");
+        const resPlaylists = await fetch("https://musicappreactbackend-production.up.railway.app//api/playlists");
         const dataPlaylists = await resPlaylists.json();
         setPlayLists(dataPlaylists.data);
         
@@ -174,7 +174,7 @@ export default function Home({
 
       setSelectedAlbum(album);
       const response = await fetch(
-        `http://localhost:3001/api/album/${album.id}/tracks`
+        `https://musicappreactbackend-production.up.railway.app//api/album/${album.id}/tracks`
       );
       const data = await response.json();
       setSelectedAlbumTracks(data.data);
@@ -193,7 +193,7 @@ export default function Home({
     try {
       setSelectedPlaylist(playlist);
       const response = await fetch(
-        `http://localhost:3001/api/playlist/${playlist.id}/tracks`
+        `https://musicappreactbackend-production.up.railway.app//api/playlist/${playlist.id}/tracks`
       );
       const data = await response.json();
       setSelectedPlaylistTracks(data.data);
