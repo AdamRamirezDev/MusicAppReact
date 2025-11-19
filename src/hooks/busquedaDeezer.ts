@@ -1,6 +1,10 @@
 import { useState } from "react";
 import type { Track } from "../types/deezerTypes";
 
+interface DeezerSearchResponse {
+    data: Track[];
+}
+
 export const BusquedaDeezer = () => {
     const [tracks, setTracks] = useState<Track[]>([]);
     const [loading, setLoading] = useState(false);
@@ -13,7 +17,7 @@ export const BusquedaDeezer = () => {
 
         try {
             const res = await fetch(`http://localhost:3001/api/search?q=${encodeURIComponent(query)}`);
-            const data = await res.json();
+            const data = await res.json() as DeezerSearchResponse;
             console.log(data);
             setTracks(data.data)
         } catch (error){
