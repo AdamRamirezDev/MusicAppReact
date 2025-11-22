@@ -27,7 +27,6 @@ export default function Busqueda({ setSearchResults, setIsSearching,resetToMain 
     // Funcion para regresar al inicio
     function handleClick(){
       resetToMain();
-      
     }
 
     useEffect(() => {

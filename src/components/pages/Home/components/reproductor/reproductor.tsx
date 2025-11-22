@@ -17,7 +17,7 @@ export default function Reproductor({ currentTrack, playlist, onChangeTrack, num
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  //Verificacion de si la pagina cumple con el width
+  //Verificacion de si la pagina cumple con el width, modificar esto
   const isMobile = window.innerWidth <= 475;
 
   //Cambio de cancion
