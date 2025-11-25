@@ -1,4 +1,4 @@
-# MusicAppReact
+# SoundClickReact
 
 [](https://github.com/AdamRamirezDev/BrowserExtensionManager#browserextensionmanager)
 
