@@ -75,13 +75,9 @@ Reproducción:
 La app usa preview (URL preview en Track) para reproducir 30s; la función onPlayTrack en el componente principal maneja la reproducción y onSetPlaylist actualiza la lista de reproducción.
 
 ## Demo 📌
-
-[](https://github.com/AdamRamirezDev/BrowserExtensionManager#demo-)
-
-Link al demo
+[](https://music-app-react-kohl.vercel.app/)
 
 ## Licencia
-
 [](https://github.com/AdamRamirezDev/BrowserExtensionManager#licencia)
 
 All Rights Reserved.
